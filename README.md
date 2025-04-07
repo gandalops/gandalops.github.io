@@ -1,7 +1,7 @@
 # gandalops.github.io
 My DevOps portfolio website - hosted on GitHub Pages
 
-# DevOps Portfolio | [Yogesh Shankar Gandal]
+# DevOps Portfolio | Yogesh Shankar Gandal
 
 🚀 **Welcome to my DevOps portfolio!**  
 This site showcases my projects, skills, and automation expertise.  
@@ -27,5 +27,5 @@ This site showcases my projects, skills, and automation expertise.
 
 ---
 
-📫 **Contact**: [www.linkedin.com/in/yogesh-gandal-pmp®-67b633229]  
-🔗 **GitHub**: [github.com/yourusername](https://github.com/gandalops)  
+📫 **Contact**: www.linkedin.com/in/yogesh-gandal-pmp®-67b633229  
+🔗 **GitHub**: github.com/gandalops
