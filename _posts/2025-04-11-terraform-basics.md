@@ -2,95 +2,152 @@
 layout: single
 title: "Terraform Journey: From Zero to Launching EC2 on AWS"
 date: 2025-04-11
+last_modified_at: 2025-04-15
 categories: [Terraform, DevSecOps]
-tags: [terraform, aws, ec2, iac, devops]
+tags: [terraform, aws, ec2, iac, devops, infrastructure-as-code]
+excerpt: "My hands-on journey learning Terraform by deploying EC2 instances on AWS, including challenges faced and security considerations."
 author_profile: true
 read_time: true
+toc: true
+toc_sticky: true
+toc_label: "Article Contents"
 ---
 
 ## 🧠 Why I Chose Terraform
 
 Coming from a project management and academic background, I wanted to *actually build things* — infrastructure included. I chose Terraform because:
 
-- It uses **declarative syntax** (easy to reason about)
-- It's widely used in DevSecOps teams
-- It integrates well with AWS, GitHub Actions, Jenkins, and more
+- **Declarative Syntax**: Write what you want, not how to get there
+- **Multi-Cloud Ready**: Works with AWS, Azure, GCP and more
+- **DevSecOps Integration**: Fits perfectly in CI/CD pipelines
+- **Community Support**: 1,000+ providers and modules available
 
----
+## 🛠️ Core Concepts I Learned
 
-## 🛠️ What I Learned
+### 1. Infrastructure as Code Fundamentals
+- **Providers**: The `aws` provider connects Terraform to AWS API
+- **Resources**: Building blocks like `aws_instance`, `aws_vpc`
+- **State Management**: The critical `.tfstate` file
+- **Plan/Apply Cycle**: `terraform plan` → review → `terraform apply`
 
-### ✅ Key Concepts
-
-- **Providers**: I used the `aws` provider to define where Terraform should create infra  
-- **Resources**: Defined `aws_instance` to launch EC2  
-- **State**: Learned how Terraform tracks infrastructure with `.tfstate`  
-- **Plan & Apply**: Got comfortable with `terraform plan` and `terraform apply`  
-- **Dependencies**: Understood how Terraform handles creation order internally  
-
----
-
-## 🔧 Hands-On Example: EC2 with Key Pair
-
-I created a simple EC2 instance using this setup:
-
-- VPC → Subnet → Internet Gateway → Route Table  
-- Security Group with `from_port` and `to_port`  
-- Connected using `.pem` key file  
-- Used `terraform output` to get public IP for SSH access  
-
+### 2. AWS Networking Basics
 ```hcl
-resource "aws_instance" "my_ec2" {
-  ami           = "ami-123456"
-  instance_type = "t2.micro"
-  key_name      = "ninja"
+# Network Foundation
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
+  
   tags = {
-    Name = "Terraform EC2"
+    Name = "Terraform-VPC"
   }
 }
+```
 
+## 🔧 EC2 Deployment Walkthrough
 
+### Step 1: Configure AWS Provider
+```hcl
+provider "aws" {
+  region = "eu-central-1"
+  
+  # Never hardcode credentials!
+  # Use environment variables or AWS CLI config
+}
+```
 
-🚧 Challenges I Faced & How I Solved Them
-🛑 SSH Not Working
-Issue: I opened only from_port = 22, forgot to_port = 22.
-Fix: Updated security group to include both.
-Learning: AWS needs a full range even for a single port. Terraform makes this explicit.
+### Step 2: Create Security Group
+```hcl
+resource "aws_security_group" "allow_ssh" {
+  name        = "allow_ssh"
+  description = "Allow SSH inbound traffic"
+  vpc_id      = aws_vpc.main.id
 
-🛑 State File Confusion
-Issue: I deleted .tfstate thinking it was cache.
-Fix: Researched and restored the state file.
-Learning: .tfstate is Terraform’s memory of deployed infra — it’s critical.
+  ingress {
+    description = "SSH from anywhere"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Restrict this in production!
+  }
 
-🛑 EC2 Not Accessible
-Issue: Instance launched, but I couldn't SSH.
-Fix: My security group only allowed internal access (10.0.0.0/8). Changed to 0.0.0.0/0 for public testing.
-Learning: CIDR ranges define network exposure — must be handled carefully in production.
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+```
 
-✅ What’s Next
-Configure remote backend using S3 + DynamoDB for state management and locking
+### Step 3: Launch EC2 Instance
+```hcl
+resource "aws_instance" "web" {
+  ami           = "ami-0c55b159cbfafe1f0" # Amazon Linux 2
+  instance_type = "t2.micro"
+  key_name      = "terraform-key"
+  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
-Create modular, reusable Terraform code
+  tags = {
+    Name = "Terraform-EC2"
+  }
+}
+```
 
-Build CI/CD pipeline with Jenkins
+## 🚧 Challenges & Solutions
 
-Integrate Trivy and tfsec for IaC security
+| Challenge | Symptom | Root Cause | Solution |
+|-----------|---------|------------|----------|
+| SSH Timeout | Connection refused | Missing Internet Gateway | Added IGW and route table |
+| State File Lost | "Resource doesn't exist" errors | Accidental deletion | Configured S3 backend |
+| Cost Surprise | Unexpected AWS charges | Left instances running | Added `terraform destroy` to workflow |
 
-Explore Terraform Cloud & Sentinel policies
+## 🔒 Security Lessons
 
-🔗 GitHub Repository
-👉 View the Code on GitHub (Developer Account)
+1. **Secrets Management**:
+   - Never commit `.tfvars` files with credentials
+   - Use AWS Secrets Manager or environment variables
 
-📌 This repo is hosted under my developer account (devyogi7579) where I experiment and learn.
-All production-grade automation, pipelines, and CI/CD work is handled from my admin account (gandalops) — just like real-world DevSecOps workflows.
+2. **Least Privilege**:
+   ```hcl
+   # Bad
+   cidr_blocks = ["0.0.0.0/0"]
+   
+   # Good
+   cidr_blocks = ["203.0.113.12/32"] # Your IP only
+   ```
 
-💬 Final Thoughts
-Terraform gave me the confidence to move from theory to real infrastructure. Every time I apply, I feel like I’m building something concrete. That’s powerful.
+3. **State Protection**:
+   - Enable S3 bucket versioning
+   - Use DynamoDB for state locking
 
-If you're starting out — break it into Epics.
-Make it real.
-Make it repeatable.
+## ✅ What's Next
 
-Thank you for reading this article! 😊
-If you have any questions, feel free to reach out — I'm happy to connect.
+1. **Advanced Terraform**:
+   - Modules for reusability
+   - Workspaces for environments
+   - Sentinel policies for governance
+
+2. **DevSecOps Integration**:
+   ```mermaid
+   graph LR
+     A[Terraform Code] --> B[GitHub PR]
+     B --> C[Checkov Scan]
+     C --> D[Jenkins Pipeline]
+     D --> E[AWS Deployment]
+   ```
+
+## 🔗 Resources
+
+- [Code Repository](https://github.com/devyogi7579/tf-infra-ec2)
+- [Official Terraform Docs](https://developer.hashicorp.com/terraform)
+- [AWS Free Tier](https://aws.amazon.com/free)
+
+---
+
+💬 **Let's Connect**  
+Have Terraform tips to share? Found a better approach?  
+[Open an issue](https://github.com/gandalops/gandalops.github.io/issues) on this blog's repo or  
+[Connect on LinkedIn](https://linkedin.com/in/yourprofile)
+
+> "Infrastructure as Code isn't just about automation - it's about bringing engineering discipline to operations." - Kief Morris
+```
 
