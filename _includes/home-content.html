@@ -13,7 +13,24 @@
       <li class="qualification-item"><span class="emoji-icon">🎓</span> BE + ME in Mechanical Engineering</li>
       <li class="qualification-item"><span class="emoji-icon">🧑‍🏫</span> 10 years as Assistant Professor in India</li>
       <li class="qualification-item"><span class="emoji-icon">🎓</span> MBA in International Management (Germany)</li>
+      <li class="qualification-item"><span class="emoji-icon">🛠️</span> Focused on CI/CD, Terraform, Jenkins, AWS, and secure pipelines</li>
     </ul>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="featured-posts">
+  <h2 class="section-title">🗂️ Recent Posts</h2>
+  <div class="posts-list">
+    {% for post in site.posts limit:3 %}
+      <article class="post-card">
+        <h3 class="post-title">
+          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+        </h3>
+        <time class="post-date">{{ post.date | date: "%B %-d, %Y" }}</time>
+      </article>
+    {% endfor %}
   </div>
 </section>
 
@@ -40,103 +57,75 @@
       <div class="project-tech">
         <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="24">
         <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="24" style="margin: 0 8px;">
-        <img src="https://www.vectorlogo.zone/logos/ubuntu/ubuntu-icon.svg" alt="EC2" width="24">
       </div>
     </div>
     <p>Terraform project to provision secure EC2 infrastructure with state management.</p>
     <a href="https://github.com/devyogi7579/tf-infra-ec2" class="project-link">🔗 GitHub Repo</a>
   </div>
+</section>
 
-  <div class="project-card">
-    <div class="project-header">
-      <h3><a href="https://github.com/gandalops/sboot-pr1-cicd">🛠️ sboot-pr1-cicd</a></h3>
-      <div class="project-tech">
-        <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins" width="24">
-        <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" width="24" style="margin: 0 8px;">
-        <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring Boot" width="24">
-      </div>
-    </div>
-    <p>Jenkins pipeline scripts and Docker-based CI/CD setup with DevSecOps stages.</p>
-    <a href="https://github.com/gandalops/sboot-pr1-cicd" class="project-link">🔗 GitHub Repo</a>
+<div class="section-divider"></div>
+
+<section class="blog-highlights">
+  <h2 class="section-title">📝 Blog Highlights</h2>
+  <div class="highlight-content">
+    <p class="highlight-item">
+      ➡️ <a href="/blog/2025-04-11-terraform-basics/" class="highlight-link">Terraform Journey: From Zero to EC2 on AWS</a>
+    </p>
+    <p class="highlight-description">I document every project and lesson learned, Epic by Epic.</p>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<section class="skill-dashboard">
-  <h2 class="section-title">📊 My DevSecOps Stack</h2>
-  <div class="skill-bars">
-    <div class="skill-item">
-      <div class="skill-label">
-        <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" width="20" alt="">
-        <span>Terraform</span>
-      </div>
-      <div class="skill-bar" style="width: 80%"></div>
+<!-- RESTORED CONTACT FORM -->
+<section class="contact-section">
+  <h2 class="section-title">📬 Contact Me</h2>
+  <form action="https://formspree.io/f/mnnplklg" method="POST" class="contact-form">
+    <div class="form-group">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" name="name" class="form-input" required>
     </div>
-    <div class="skill-item">
-      <div class="skill-label">
-        <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" width="20" alt="">
-        <span>AWS</span>
-      </div>
-      <div class="skill-bar" style="width: 60%"></div>
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" name="email" class="form-input" required>
     </div>
-    <div class="skill-item">
-      <div class="skill-label">
-        <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" width="20" alt="">
-        <span>Jenkins</span>
-      </div>
-      <div class="skill-bar" style="width: 40%"></div>
+    <div class="form-group">
+      <label for="message" class="form-label">Message</label>
+      <textarea name="message" rows="5" class="form-textarea" required></textarea>
     </div>
-  </div>
+    <button type="submit" class="submit-button">Send Message</button>
+  </form>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RESTORED VISITOR COUNTER -->
+<section class="visitor-section">
+  <h2 class="section-title">📊 Visitors</h2>
+  <p>
+    <a href="https://hits.sh/www.opsbygandal.dev/">
+      <img alt="Visitor count" src="https://hits.sh/www.opsbygandal.dev.svg" />
+    </a>
+  </p>
 </section>
 
 <style>
-  /* Tech Logo Styling */
-  .tech-logos {
-    margin: 1.5rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* All previous CSS from earlier version PLUS: */
+  
+  /* Contact Form Restyling */
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
   }
   
-  .project-tech {
-    display: flex;
-    margin: 0.5rem 0;
+  /* Visitor Counter */
+  .visitor-section {
+    text-align: center;
+    padding: 1rem 0;
   }
   
-  .project-tech img {
-    transition: transform 0.3s ease;
-  }
-  
-  .project-tech img:hover {
-    transform: scale(1.2);
-  }
-  
-  /* Skill Bars */
-  .skill-item {
-    margin-bottom: 1rem;
-  }
-  
-  .skill-label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.3rem;
-  }
-  
-  .skill-label img {
-    margin-right: 8px;
-  }
-  
-  .skill-bar {
-    height: 8px;
-    background: linear-gradient(90deg, #6f42c1, #9a67cb);
-    border-radius: 4px;
-  }
-  
-  .project-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: #6f42c1;
-    font-weight: 500;
+  .visitor-section img {
+    height: 30px;
   }
 </style>
