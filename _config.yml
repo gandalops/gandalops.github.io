@@ -7,14 +7,14 @@ description: >-
 baseurl: "" # keep it blank for user.github.io repo
 url: "https://gandalops.github.io"
 
-theme: minimal-mistakes-jekyll
+#theme: minimal-mistakes-jekyll for Gem based themes, both theme doesnot work together, choose one
 plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-remote-theme
 
-remote_theme: "mmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes"  #for GitHub Pages (remote theme)
 
 author:
   name   : GandalOps
