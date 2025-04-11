@@ -16,3 +16,4 @@ vendor/
 
 # Logs
 *.log
+_site/
