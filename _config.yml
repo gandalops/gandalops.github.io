@@ -3,26 +3,28 @@ title: "Yogesh Gandal DevSecOps Portfolio"
 email: contact@opsbygandal.dev
 description: >-
   My DevSecOps journey, projects, and blog.
-baseurl: "" # Required for GitHub Pages
+baseurl: "" 
 url: "https://gandalops.github.io"
 
 # Minimal Mistakes Theme
 remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default"  # Explicit skin selection
+repository: "gandalops/gandalops.github.io"  # Required for GitHub metadata
 
-
-# Plugins
+# Plugins (order matters)
 plugins:
-  - jekyll-remote-theme
-  - jekyll-feed
+  - jekyll-remote-theme  # Must be first
   - jekyll-include-cache
+  - jekyll-feed
   - jekyll-sitemap
-  
+  - jekyll-seo-tag  # Recommended addition
 
 # Exclusions
 exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - .github  # If not using GitHub Actions
 
 # Author Profile
 author:
@@ -30,12 +32,15 @@ author:
   avatar: "/assets/images/avatar.png"
   bio: "DevSecOps explorer. From Academia to securing Infra & pipelines."
   location: "Germany"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:contact@opsbygandal.dev"
 
 # Directory Includes
 include:
   - _includes/home-content.html
-
-  
+  - _includes/head/custom.html  # For your custom CSS
 
 # Default Front Matter
 defaults:
@@ -45,9 +50,22 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "main"
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
 
 # Markdown Processor
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Main Navigation
 nav:
@@ -58,12 +76,30 @@ nav:
   - title: "Blog"
     url: /blog/
 
+# Comments
 comments:
   provider: "utterances"
   utterances:
     repo: "gandalops/gandalops.github.io"
     issue_term: "pathname"
+    theme: "github-light"
 
-# Disable built-in homepage recent post section
+# Homepage Configuration
+home:
+  layout: home
+  sidebar:
+    show_recent: true
+    recent_limit: 3
+    show_sidebar_ad: false  # Remove ads
+
+# Performance Optimization
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Disable built-in pagination
 paginate: false
 show_excerpts: false
