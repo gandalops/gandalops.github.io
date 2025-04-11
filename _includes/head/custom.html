@@ -1,29 +1,19 @@
-cat > _includes/head/custom.html << 'EOF'
+cat > _includes/head/custom.html << 'EOT'
 <style>
-  /* Reorder homepage sections */
-  .page__content {
-    display: flex;
-    flex-direction: column;
+  /* Hide duplicate recent posts */
+  .page__content .sidebar.sticky {
+    display: none !important;
   }
   
-  /* Move About Me to top */
-  .page__content > section:nth-child(1) {
-    order: 1;
+  /* Move featured posts up */
+  .featured-posts {
+    order: 2;
+    margin-bottom: 2rem;
   }
   
-  /* Move Recent Posts to position 2 */
-  .sidebar.sticky {
-    order: 2 !important;
-  }
-  
-  /* Move Blog Highlights to position 3 */
-  .page__content > section:nth-child(2) {
-    order: 3;
-  }
-  
-  /* Move Contact to position 4 */
-  .page__content > section:nth-child(3) {
-    order: 4;
+  /* Hide everything after visitor count */
+  .page__content section:nth-child(n+4) {
+    display: none;
   }
 </style>
-EOF
+EOT

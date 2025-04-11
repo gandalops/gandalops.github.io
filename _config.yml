@@ -88,7 +88,7 @@ comments:
 home:
   layout: home
   sidebar:
-    show_recent: true
+    show_recent: false
     recent_limit: 3
     show_sidebar_ad: false  # Remove ads
 
