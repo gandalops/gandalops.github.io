@@ -5,34 +5,34 @@ author_profile: true
 permalink: /
 ---
 
-Hi, I'm **Yogesh Gandal**, an aspiring **DevSecOps Engineer** transitioning from academia into hands-on engineering.
+## 👨‍💻 About Me
 
-I focus on building secure, automated pipelines, managing infrastructure using code, and documenting everything I learn — one Epic at a time.
+Hi, I'm **Yogesh Gandal**, an aspiring **DevSecOps Engineer** transitioning from academia and project management into secure infrastructure and automation.
+
+- 🎓 BE + ME in Mechanical Engineering  
+- 🧑‍🏫 10 years as Assistant Professor in India  
+- 🎓 MBA in International Management (Germany)  
+- 🛠️ Focused on CI/CD, Terraform, Jenkins, AWS, and secure pipelines
 
 ---
 
-## 👨‍💻 About Me
+## 🗂️ Recent Posts
 
-- 🎓 BE + ME in Mechanical Engineering  
-- 🧑‍🏫 10 years as Assistant Professor  
-- 🎓 MBA in International Management (Germany)  
-- 🔁 Transitioning into **DevSecOps** with CI/CD, Terraform, Jenkins, and AWS
+{% include blog-featured.html %}
 
 ---
 
 ## 📝 Blog Highlights
 
-Check out my latest blog post:
+Check out my first blog post:
 
-👉 [Terraform Journey: From Zero to EC2 on AWS](/blog/2025-04-11-terraform-basics/)
+➡️ [Terraform Journey: From Zero to EC2 on AWS](/blog/2025-04-11-terraform-basics/)
 
-More posts coming soon — I document my learnings Epic-by-Epic!
+I document every project and lesson learned, Epic by Epic.
 
 ---
 
 ## 📬 Contact Me
-
-If you'd like to get in touch:
 
 <form action="https://formspree.io/f/mnnplklg" method="POST">
   <label for="name">Name</label><br>
@@ -47,3 +47,6 @@ If you'd like to get in touch:
   <button type="submit">Send</button>
 </form>
 
+---
+
+**📊 Visitor Counter Coming Next ⏳**
