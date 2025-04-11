@@ -1,18 +1,23 @@
 <style>
-  /* Hide theme's recent posts completely */
-  .sidebar.sticky { display: none !important; }
+  /* Permanently hide theme's recent posts */
+  .page__content .sidebar { display: none !important; }
   
-  /* Style your manual recent posts */
-  .featured-posts .posts-list {
-    display: grid;
-    gap: 1rem;
+  /* Enhanced recent posts styling */
+  .featured-posts {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 2rem 0;
   }
+  .featured-posts h2 { margin-top: 0; }
   .featured-posts article {
-    border-left: 3px solid #6f777d;
-    padding-left: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #dee2e6;
   }
+  .featured-posts article:last-child { border: none; }
   .featured-posts time {
-    color: #6f777d;
-    font-size: 0.9em;
+    display: block;
+    color: #6c757d;
+    font-size: 0.85em;
   }
 </style>

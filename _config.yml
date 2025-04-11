@@ -89,6 +89,8 @@ home:
   layout: home
   sidebar:
     show_recent: false
+    show_recent: false
+    show_recent: false
     recent_limit: 3
     show_sidebar_ad: false  # Remove ads
 
@@ -106,6 +108,18 @@ show_excerpts: falsehome:
   layout: home
   sidebar:
     show_recent: false
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year-:month-:day-:title/
+
+# Permalink fix
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year-:month-:day-:title/
+
+# Permalink fix
 collections:
   posts:
     output: true
