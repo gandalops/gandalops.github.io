@@ -3,28 +3,28 @@ title: "Yogesh Gandal DevSecOps Portfolio"
 email: contact@opsbygandal.dev
 description: >-
   My DevSecOps journey, projects, and blog.
-baseurl: "" 
+baseurl: ""
 url: "https://gandalops.github.io"
 
 # Minimal Mistakes Theme
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default"  # Explicit skin selection
-repository: "gandalops/gandalops.github.io"  # Required for GitHub metadata
+minimal_mistakes_skin: "default"
+repository: "gandalops/gandalops.github.io"
 
 # Plugins (order matters)
 plugins:
-  - jekyll-remote-theme  # Must be first
+  - jekyll-remote-theme
   - jekyll-include-cache
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-seo-tag  # Recommended addition
+  - jekyll-seo-tag
 
 # Exclusions
 exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
-  - .github  # If not using GitHub Actions
+  - .github
 
 # Author Profile
 author:
@@ -40,7 +40,7 @@ author:
 # Directory Includes
 include:
   - _includes/home-content.html
-  - _includes/head/custom.html  # For your custom CSS
+  - _includes/head/custom.html
 
 # Default Front Matter
 defaults:
@@ -67,7 +67,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-# Main Navigation
+# Navigation
 nav:
   - title: "Home"
     url: /
@@ -84,43 +84,21 @@ comments:
     issue_term: "pathname"
     theme: "github-light"
 
-# Homepage Configuration
+# Homepage Customization
 home:
   layout: home
   sidebar:
     show_recent: false
-    show_recent: false
-    show_recent: false
     recent_limit: 3
-    show_sidebar_ad: false  # Remove ads
+    show_sidebar_ad: false
 
-# Performance Optimization
-gems:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
-
-# Disable built-in pagination
+# Pagination Fix
 paginate: false
-show_excerpts: falsehome:
-  layout: home
-  sidebar:
-    show_recent: false
+show_excerpts: false
+
+# Blog Permalinks
 collections:
   posts:
     output: true
     permalink: /blog/:year-:month-:day-:title/
 
-# Permalink fix
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year-:month-:day-:title/
-
-# Permalink fix
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year-:month-:day-:title/
