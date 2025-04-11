@@ -63,3 +63,7 @@ comments:
   utterances:
     repo: "gandalops/gandalops.github.io"
     issue_term: "pathname"
+
+# Disable built-in homepage recent post section
+paginate: false
+show_excerpts: false
