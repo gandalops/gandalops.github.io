@@ -7,14 +7,13 @@ description: >-
 baseurl: "" # keep it blank for user.github.io repo
 url: "https://gandalops.github.io"
 
+remote_theme: "mmistakes/minimal-mistakes"
 
 plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-remote-theme
-
-remote_theme: "mmistakes/minimal-mistakes" 
 
 author:
   name   : Yogesh Shankar Gandal
@@ -42,10 +41,3 @@ nav:
     url: /projects/
   - title: "Blog"
     url: /blog/
-  - title: "About"
-    url: /about/
-  - title: "Contact"
-    url: /contact/
-
-
-
