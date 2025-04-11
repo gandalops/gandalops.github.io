@@ -2,30 +2,33 @@
   <h2 class="section-title">👨‍💻 About Me</h2>
   <div class="about-content">
     <p class="intro-text">
-      Hi, I'm <strong class="highlight">Yogesh Gandal</strong>, an aspiring <strong class="highlight">DevSecOps Engineer</strong> transitioning from academia and project management into secure infrastructure and automation.
+      Hi, I'm <strong class="highlight">Yogesh Gandal</strong>, an 
+      <span class="typed-text" data-typed-items='["DevSecOps Engineer", "AWS Learner", "Terraform Enthusiast", "CI/CD Explorer"]'></span>
+      transitioning from academia to cloud automation.
     </p>
-    <ul class="qualifications-list">
-      <li class="qualification-item"><span class="emoji-icon">🎓</span> BE + ME in Mechanical Engineering</li>
-      <li class="qualification-item"><span class="emoji-icon">🧑‍🏫</span> 10 years as Assistant Professor in India</li>
-      <li class="qualification-item"><span class="emoji-icon">🎓</span> MBA in International Management (Germany)</li>
-      <li class="qualification-item"><span class="emoji-icon">🛠️</span> Focused on CI/CD, Terraform, Jenkins, AWS, and secure pipelines</li>
-    </ul>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section class="featured-posts">
-  <h2 class="section-title">🗂️ Recent Posts</h2>
-  <div class="posts-list">
-    {% for post in site.posts limit:3 %}
-      <article class="post-card">
-        <h3 class="post-title">
-          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-        </h3>
-        <time class="post-date">{{ post.date | date: "%B %-d, %Y" }}</time>
-      </article>
-    {% endfor %}
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-icon">🛠️</span>
+        <div class="timeline-content">
+          <h4>2023</h4>
+          <p>Mechanical Engineering Professor</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-icon">📚</span>
+        <div class="timeline-content">
+          <h4>2024</h4>
+          <p>MBA + Cloud Certifications</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-icon">☁️</span>
+        <div class="timeline-content">
+          <h4>2025</h4>
+          <p>First Terraform Deployment</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -35,39 +38,79 @@
   <h2 class="section-title">🚀 Featured Projects</h2>
 
   <div class="project-card">
-    <h3><a href="https://github.com/gandalops/gandalops.github.io">🌐 gandalops.github.io</a></h3>
+    <div class="project-header">
+      <h3><a href="https://github.com/gandalops/gandalops.github.io">🌐 gandalops.github.io</a></h3>
+      <div class="project-badges">
+        <span class="badge">Jekyll</span>
+        <span class="badge">GitHub Pages</span>
+        <span class="badge">CSS</span>
+      </div>
+    </div>
     <p>My public DevSecOps portfolio built using Jekyll and GitHub Pages.</p>
-    <p><a href="https://www.opsbygandal.dev/">🔗 View Live</a></p>
+    <div class="project-cta">
+      <a href="https://www.opsbygandal.dev/" class="cta-link">🔗 View Live</a>
+      <a href="https://github.com/gandalops/gandalops.github.io" class="cta-link secondary">Source Code</a>
+    </div>
   </div>
 
   <div class="project-card">
-    <h3><a href="https://github.com/devyogi7579/tf-infra-ec2">🌿 tf-infra-ec2</a></h3>
+    <div class="project-header">
+      <h3><a href="https://github.com/devyogi7579/tf-infra-ec2">🌿 tf-infra-ec2</a></h3>
+      <div class="project-badges">
+        <span class="badge">Terraform</span>
+        <span class="badge">AWS</span>
+        <span class="badge">EC2</span>
+      </div>
+    </div>
     <p>Terraform project to provision secure EC2 infrastructure with state management.</p>
-    <p><a href="https://github.com/devyogi7579/tf-infra-ec2">🔗 GitHub Repo</a></p>
+    <div class="project-cta">
+      <a href="https://github.com/devyogi7579/tf-infra-ec2" class="cta-link">🔗 View Repo</a>
+    </div>
   </div>
 
   <div class="project-card">
-    <h3><a href="https://github.com/gandalops/sboot-pr1-dev">⚙️ sboot-pr1-dev</a></h3>
-    <p>Spring Boot development repo as part of the CI/CD pipeline demonstration.</p>
-    <p><a href="https://github.com/gandalops/sboot-pr1-dev">🔗 GitHub Repo</a></p>
-  </div>
-
-  <div class="project-card">
-    <h3><a href="https://github.com/gandalops/sboot-pr1-cicd">🛠️ sboot-pr1-cicd</a></h3>
-    <p>Jenkins pipeline scripts and Docker-based CI/CD setup with DevSecOps stages.</p>
-    <p><a href="https://github.com/gandalops/sboot-pr1-cicd">🔗 GitHub Repo</a></p>
+    <div class="project-header">
+      <h3><a href="https://github.com/gandalops/sboot-pr1-cicd">🛠️ sboot-pr1-cicd</a></h3>
+      <div class="project-badges">
+        <span class="badge">Jenkins</span>
+        <span class="badge">DevSecOps</span>
+        <span class="badge">Docker</span>
+      </div>
+    </div>
+    <p>Complete Jenkins CI/CD pipeline with Trivy, tfsec, and secure stages.</p>
+    <div class="project-cta">
+      <a href="https://github.com/gandalops/sboot-pr1-cicd" class="cta-link">🔗 View Repo</a>
+    </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<section class="blog-highlights">
-  <h2 class="section-title">📝 Blog Highlights</h2>
-  <div class="highlight-content">
-    <p class="highlight-item">
-      ➡️ <a href="/blog/2025-04-11-terraform-basics/" class="highlight-link">Terraform Journey: From Zero to EC2 on AWS</a>
-    </p>
-    <p class="highlight-description">I document every project and lesson learned, Epic by Epic.</p>
+<section class="skill-dashboard">
+  <h2 class="section-title">📊 My Learning Progress</h2>
+  <div class="skill-bars">
+    <div class="skill-item">
+      <div class="skill-info">
+        <span>Terraform</span><span>80%</span>
+      </div>
+      <div class="skill-bar" style="width: 80%"></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <span>AWS</span><span>60%</span>
+      </div>
+      <div class="skill-bar" style="width: 60%"></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-info">
+        <span>Jenkins</span><span>70%</span>
+      </div>
+      <div class="skill-bar" style="width: 70%"></div>
+    </div>
+  </div>
+  <div class="certifications">
+    <span class="cert-badge">✅ AWS CCP</span>
+    <span class="cert-badge upcoming">🕒 Terraform Associate (Q3 2025)</span>
   </div>
 </section>
 
@@ -77,28 +120,51 @@
   <h2 class="section-title">📬 Contact Me</h2>
   <form action="https://formspree.io/f/mnnplklg" method="POST" class="contact-form">
     <div class="form-group">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" name="name" class="form-input" required>
+      <label for="name">Name</label>
+      <input type="text" name="name" required>
     </div>
     <div class="form-group">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" name="email" class="form-input" required>
+      <label for="email">Email</label>
+      <input type="email" name="email" required>
     </div>
     <div class="form-group">
-      <label for="message" class="form-label">Message</label>
-      <textarea name="message" rows="5" class="form-textarea" required></textarea>
+      <label for="message">Message</label>
+      <textarea name="message" rows="5" required></textarea>
     </div>
-    <button type="submit" class="submit-button">Send Message</button>
+    <div class="form-options">
+      <label><input type="checkbox" name="mentorship"> Mentorship</label>
+      <label><input type="checkbox" name="collab"> Collaboration</label>
+    </div>
+    <button type="submit" class="submit-button">Send</button>
   </form>
 </section>
 
 <div class="section-divider"></div>
 
-<section>
-  <h2>📊 Visitors</h2>
-  <p>
+<section class="footer-section">
+  <p class="signature">"Building secure systems one Epic at a time"</p>
+  <div class="visitor-counter">
     <a href="https://hits.sh/www.opsbygandal.dev/">
-      <img alt="Visitor count" src="https://hits.sh/www.opsbygandal.dev.svg" />
+      <img alt="Visitor count" src="https://hits.sh/www.opsbygandal.dev.svg?style=flat-square&label=Visitors&color=6f42c1" />
     </a>
-  </p>
+  </div>
+  <div class="engagement-cta">
+    <p>🗳️ Which project should I document next?</p>
+    <div class="vote-buttons">
+      <button class="vote-btn">Terraform</button>
+      <button class="vote-btn">AWS</button>
+      <button class="vote-btn">Jenkins</button>
+    </div>
+  </div>
 </section>
+
+<!-- Typed.js for animated title -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  new Typed('.typed-text', {
+    strings: ['DevSecOps Engineer', 'AWS Learner', 'Terraform Enthusiast', 'CI/CD Explorer'],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true
+  });
+</script>
