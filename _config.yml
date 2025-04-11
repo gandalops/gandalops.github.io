@@ -7,19 +7,19 @@ description: >-
 baseurl: "" # keep it blank for user.github.io repo
 url: "https://gandalops.github.io"
 
-#theme: minimal-mistakes-jekyll for Gem based themes, both theme doesnot work together, choose one
+
 plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-remote-theme
 
-remote_theme: "mmistakes/minimal-mistakes"  #for GitHub Pages (remote theme)
+remote_theme: "mmistakes/minimal-mistakes" 
 
 author:
-  name   : GandalOps
+  name   : Yogesh Shankar Gandal
   avatar : "/assets/images/avatar.png"
-  bio    : "DevSecOps explorer. From Academia to pipelines."
+  bio    : "DevSecOps explorer. From Academia to securing Infra & pipelines."
   location: "Germany"
 
 include:
@@ -42,7 +42,10 @@ nav:
     url: /projects/
   - title: "Blog"
     url: /blog/
+  - title: "About"
+    url: /about/
   - title: "Contact"
     url: /contact/
+
 
 
