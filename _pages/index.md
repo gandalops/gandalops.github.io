@@ -50,3 +50,8 @@ I document every project and lesson learned, Epic by Epic.
 ---
 
 **📊 Visitor Counter Coming Next ⏳**
+
+---
+
+Thank you for visiting my portfolio site!
+
