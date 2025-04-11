@@ -1,18 +1,48 @@
-title: "GandalOps | DevSecOps Portfolio"
-description: "My DevSecOps journey, projects, and blogs — by Yogesh Gandal"
-baseurl: "" # leave empty
+
+title: "Yogesh Gandal DevSecOps Portfolio"
+email: contact@opsbygandal.dev
+
+description: >-
+  My DevSecOps journey, projects, and blog.
+baseurl: "" # keep it blank for user.github.io repo
 url: "https://gandalops.github.io"
 
-author:
-  name: "Yogesh Gandal"
-  email: "contact@opsbygandal.dev"
-  github: gandalops
-  linkedin: yogesh-gandal
-
-theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-sitemap
+  - jekyll-remote-theme
+
+remote_theme: "mmistakes/minimal-mistakes"
+
+author:
+  name   : GandalOps
+  avatar : "/assets/images/avatar.png"
+  bio    : "DevSecOps explorer. From Academia to pipelines."
+  location: "Germany"
+
+include:
+  - _pages
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
 markdown: kramdown
+
+nav:
+  - title: "Home"
+    url: /
+  - title: "Projects"
+    url: /projects/
+  - title: "Blog"
+    url: /blog/
+  - title: "Contact"
+    url: /contact/
+
 

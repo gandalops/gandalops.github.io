@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "👋 Welcome to My DevSecOps Portfolio"
+title: "Welcome to My DevSecOps Portfolio"
 ---
 
 Hi, I'm **Yogesh Gandal**, an aspiring **DevSecOps Engineer** transitioning from academia and project management into hands-on engineering.
