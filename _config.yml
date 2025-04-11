@@ -1,28 +1,41 @@
+# Site Configuration
 title: "Yogesh Gandal DevSecOps Portfolio"
 email: contact@opsbygandal.dev
-
 description: >-
   My DevSecOps journey, projects, and blog.
-baseurl: "" # keep it blank for user.github.io repo
+baseurl: "" # Required for GitHub Pages
 url: "https://gandalops.github.io"
 
+# Minimal Mistakes Theme
 remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default" # Options: default, dark, air, etc.
+repository: "gandalops/gandalops.github.io"
 
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-remote-theme
 
+# Exclusions
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Author Profile
 author:
-  name   : Yogesh Shankar Gandal
-  avatar : "/assets/images/avatar.png"
-  bio    : "DevSecOps explorer. From Academia to securing Infra & pipelines."
+  name: "Yogesh Shankar Gandal"
+  avatar: "/assets/images/avatar.png"
+  bio: "DevSecOps explorer. From Academia to securing Infra & pipelines."
   location: "Germany"
 
+# Directory Includes
 include:
   - _pages
 
+# Default Front Matter
 defaults:
   - scope:
       path: "_pages"
@@ -31,9 +44,10 @@ defaults:
       layout: single
       author_profile: true
 
-
+# Markdown Processor
 markdown: kramdown
 
+# Main Navigation
 nav:
   - title: "Home"
     url: /
@@ -41,3 +55,9 @@ nav:
     url: /projects/
   - title: "Blog"
     url: /blog/
+
+comments:
+  provider: "utterances"
+  utterances:
+    repo: "gandalops/gandalops.github.io"
+    issue_term: "pathname"
