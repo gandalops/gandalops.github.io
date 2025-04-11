@@ -34,6 +34,7 @@ author:
 # Directory Includes
 include:
   - _pages
+  - home.html
 
 # Default Front Matter
 defaults:
