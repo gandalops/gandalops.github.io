@@ -1,0 +1,187 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>GitHub Pages – Errors &amp; Fixes - Yogesh Gandal DevSecOps Portfolio</title>
+<meta name="description" content="My DevSecOps journey, projects, and blog.">
+
+
+  <meta name="author" content="Yogesh Shankar Gandal">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Yogesh Gandal DevSecOps Portfolio">
+<meta property="og:title" content="GitHub Pages – Errors &amp; Fixes">
+<meta property="og:url" content="http://localhost:4000/errors-and-fixes/github-pages.html">
+
+
+  <meta property="og:description" content="My DevSecOps journey, projects, and blog.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/errors-and-fixes/github-pages.html">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Yogesh Gandal DevSecOps Portfolio Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--default" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Yogesh Gandal DevSecOps Portfolio
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <h1 id="github-pages--errors--fixes">GitHub Pages – Errors &amp; Fixes</h1>
+
+<p>This log tracks issues I encountered while setting up and deploying my DevSecOps portfolio using GitHub Pages and Jekyll.</p>
+
+<hr />
+
+<h2 id="-error-1-404--file-not-found-after-setting-up-homepage">❌ Error 1: 404 – File Not Found After Setting Up Homepage</h2>
+
+<p><strong>Context:</strong><br />
+After creating and pushing <code class="language-plaintext highlighter-rouge">index.md</code>, GitHub Pages showed a <code class="language-plaintext highlighter-rouge">404 File Not Found</code> page.</p>
+
+<p><strong>Root Cause:</strong><br />
+GitHub Pages was still trying to load the old <code class="language-plaintext highlighter-rouge">index.html</code> file, which conflicted with the new Jekyll structure.</p>
+
+<p><strong>Fix Applied:</strong></p>
+<ol>
+  <li>Deleted the old <code class="language-plaintext highlighter-rouge">index.html</code> from the repo</li>
+  <li>Added <code class="language-plaintext highlighter-rouge">_config.yml</code> to enable Jekyll with Minima theme</li>
+  <li>Committed and pushed both files</li>
+  <li>Enabled GitHub Pages:<br />
+→ <code class="language-plaintext highlighter-rouge">Settings → Pages → Source → main → / (root)</code></li>
+</ol>
+
+<p><strong>Status:</strong> ✅ Resolved<br />
+<strong>Date:</strong> 08 April 2025<br />
+<strong>Tags:</strong> <code class="language-plaintext highlighter-rouge">github-pages</code>, <code class="language-plaintext highlighter-rouge">jekyll</code>, <code class="language-plaintext highlighter-rouge">index.md</code>, <code class="language-plaintext highlighter-rouge">404 error</code></p>
+
+<hr />
+
+<blockquote>
+  <p>I’ll continue to log GitHub Pages–related errors here as I build and publish more blogs, pages, and components.</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Yogesh Gandal DevSecOps Portfolio</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,16 @@
+cat > _includes/blog-featured.html << 'EOF'
+<div class="featured-posts">
+  {% if site.posts.size > 0 %}
+    <ul>
+      {% for post in site.posts limit:3 %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <small>{{ post.date | date: "%b %-d, %Y" }}</small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No posts yet. Check back soon!</p>
+  {% endif %}
+</div>
+EOF

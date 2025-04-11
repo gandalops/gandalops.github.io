@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-04-11T18:22:50+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yogesh Gandal DevSecOps Portfolio</title><subtitle>My DevSecOps journey, projects, and blog.</subtitle><author><name>Yogesh Shankar Gandal</name></author><entry><title type="html">Terraform Journey: From Zero to Launching EC2 on AWS</title><link href="http://localhost:4000/terraform/devsecops/2025/04/11/terraform-basics.html" rel="alternate" type="text/html" title="Terraform Journey: From Zero to Launching EC2 on AWS" /><published>2025-04-11T00:00:00+02:00</published><updated>2025-04-11T00:00:00+02:00</updated><id>http://localhost:4000/terraform/devsecops/2025/04/11/terraform-basics</id><content type="html" xml:base="http://localhost:4000/terraform/devsecops/2025/04/11/terraform-basics.html"><![CDATA[<h2 id="-why-i-chose-terraform">🧠 Why I Chose Terraform</h2>
+
+<p>Coming from a project management and academic background, I wanted to <em>actually build things</em> — infrastructure included. I chose Terraform because:</p>
+
+<ul>
+  <li>It uses <strong>declarative syntax</strong> (easy to reason about)</li>
+  <li>It’s widely used in DevSecOps teams</li>
+  <li>It integrates well with AWS, GitHub Actions, Jenkins, and more</li>
+</ul>
+
+<hr />
+
+<h2 id="️-what-i-learned">🛠️ What I Learned</h2>
+
+<h3 id="-key-concepts">✅ Key Concepts</h3>
+
+<ul>
+  <li><strong>Providers</strong>: I used the <code class="language-plaintext highlighter-rouge">aws</code> provider to define where Terraform should create infra</li>
+  <li><strong>Resources</strong>: Defined <code class="language-plaintext highlighter-rouge">aws_instance</code> to launch EC2</li>
+  <li><strong>State</strong>: Learned how Terraform tracks infrastructure with <code class="language-plaintext highlighter-rouge">.tfstate</code></li>
+  <li><strong>Plan &amp; Apply</strong>: Got comfortable with <code class="language-plaintext highlighter-rouge">terraform plan</code> and <code class="language-plaintext highlighter-rouge">terraform apply</code></li>
+  <li><strong>Dependencies</strong>: Understood how Terraform handles creation order internally</li>
+</ul>
+
+<hr />
+
+<h2 id="-hands-on-example-ec2-with-key-pair">🔧 Hands-On Example: EC2 with Key Pair</h2>
+
+<p>I created a simple EC2 instance using this setup:</p>
+
+<ul>
+  <li>VPC → Subnet → Internet Gateway → Route Table</li>
+  <li>Security Group with <code class="language-plaintext highlighter-rouge">from_port</code> and <code class="language-plaintext highlighter-rouge">to_port</code></li>
+  <li>Connected using <code class="language-plaintext highlighter-rouge">.pem</code> key file</li>
+  <li>Used <code class="language-plaintext highlighter-rouge">terraform output</code> to get public IP for SSH access</li>
+</ul>
+
+<p>```hcl
+resource “aws_instance” “my_ec2” {
+  ami           = “ami-123456”
+  instance_type = “t2.micro”
+  key_name      = “ninja”
+  tags = {
+    Name = “Terraform EC2”
+  }
+}</p>
+
+<p>🚧 Challenges I Faced &amp; How I Solved Them
+🛑 SSH Not Working
+Issue: I opened only from_port = 22, forgot to_port = 22.
+Fix: Updated security group to include both.
+Learning: AWS needs a full range even for a single port. Terraform makes this explicit.</p>
+
+<p>🛑 State File Confusion
+Issue: I deleted .tfstate thinking it was cache.
+Fix: Researched and restored the state file.
+Learning: .tfstate is Terraform’s memory of deployed infra — it’s critical.</p>
+
+<p>🛑 EC2 Not Accessible
+Issue: Instance launched, but I couldn’t SSH.
+Fix: My security group only allowed internal access (10.0.0.0/8). Changed to 0.0.0.0/0 for public testing.
+Learning: CIDR ranges define network exposure — must be handled carefully in production.</p>
+
+<p>✅ What’s Next
+Configure remote backend using S3 + DynamoDB for state management and locking</p>
+
+<p>Create modular, reusable Terraform code</p>
+
+<p>Build CI/CD pipeline with Jenkins</p>
+
+<p>Integrate Trivy and tfsec for IaC security</p>
+
+<p>Explore Terraform Cloud &amp; Sentinel policies</p>
+
+<p>🔗 GitHub Repository
+👉 View the Code on GitHub (Developer Account)</p>
+
+<p>📌 This repo is hosted under my developer account (devyogi7579) where I experiment and learn.
+All production-grade automation, pipelines, and CI/CD work is handled from my admin account (gandalops) — just like real-world DevSecOps workflows.</p>
+
+<p>💬 Final Thoughts
+Terraform gave me the confidence to move from theory to real infrastructure. Every time I apply, I feel like I’m building something concrete. That’s powerful.</p>
+
+<p>If you’re starting out — break it into Epics.
+Make it real.
+Make it repeatable.</p>
+
+<p>Thank you for reading this article! 😊
+If you have any questions, feel free to reach out — I’m happy to connect.</p>]]></content><author><name>Yogesh Shankar Gandal</name></author><category term="Terraform" /><category term="DevSecOps" /><category term="terraform" /><category term="aws" /><category term="ec2" /><category term="iac" /><category term="devops" /><summary type="html"><![CDATA[🧠 Why I Chose Terraform]]></summary></entry></feed>
