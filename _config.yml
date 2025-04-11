@@ -102,4 +102,11 @@ gems:
 
 # Disable built-in pagination
 paginate: false
-show_excerpts: false
+show_excerpts: falsehome:
+  layout: home
+  sidebar:
+    show_recent: false
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year-:month-:day-:title/

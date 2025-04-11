@@ -13,20 +13,16 @@
 
 <hr />
 
-<section>
+<section class="featured-posts">
   <h2>🗂️ Recent Posts</h2>
-  {% if site.posts.size > 0 %}
-    <ul>
-      {% for post in site.posts limit:3 %}
-        <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br />
-          <small>📅 {{ post.date | date: "%b %d, %Y" }}</small>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No blog posts yet. Check back soon!</p>
-  {% endif %}
+  <div class="posts-list">
+    {% for post in site.posts limit:3 %}
+      <article>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <time>{{ post.date | date: "%B %-d, %Y" }}</time>
+      </article>
+    {% endfor %}
+  </div>
 </section>
 
 

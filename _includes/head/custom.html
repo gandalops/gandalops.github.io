@@ -1,18 +1,18 @@
 <style>
-  /* Hide duplicate recent posts */
-  .page__content .sidebar.sticky {
-    display: none !important;
-  }
+  /* Hide theme's recent posts completely */
+  .sidebar.sticky { display: none !important; }
   
-  /* Move featured posts up */
-  .featured-posts {
-    order: 2;
-    margin-bottom: 2rem;
+  /* Style your manual recent posts */
+  .featured-posts .posts-list {
+    display: grid;
+    gap: 1rem;
   }
-  
-  /* Hide everything after visitor count */
-  .page__content section:nth-child(n+4) {
-    display: none;
+  .featured-posts article {
+    border-left: 3px solid #6f777d;
+    padding-left: 1rem;
+  }
+  .featured-posts time {
+    color: #6f777d;
+    font-size: 0.9em;
   }
 </style>
-EOT
