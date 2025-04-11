@@ -8,15 +8,15 @@ url: "https://gandalops.github.io"
 
 # Minimal Mistakes Theme
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default" # Options: default, dark, air, etc.
-repository: "gandalops/gandalops.github.io"
+
 
 # Plugins
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-sitemap
-  - jekyll-remote-theme
+  
 
 # Exclusions
 exclude:
