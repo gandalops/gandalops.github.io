@@ -4,18 +4,22 @@ title: "Welcome to My DevSecOps Portfolio"
 author_profile: true
 ---
 
-Hi, I'm **Yogesh Gandal** — an aspiring **DevSecOps Engineer** transitioning from academia and project management into hands-on engineering.
+Hi, I'm **Yogesh Gandal**, an aspiring **DevSecOps Engineer** transitioning from academia into hands-on engineering.
 
-I focus on building **secure, automated pipelines**, managing infrastructure using code, and documenting everything I learn — one Epic at a time.
-
-🛠️ **Currently Working On:**  
-[Epic 8: Infrastructure as Code with Terraform](/blog/2025-terraform-basics)
-Explore my [Projects](/projects/)  
-Browse my [Blog](/blog/)  
-View or [Download my Resume](/resume/Yogesh-Gandal-Resume.pdf)
+I focus on building secure, automated pipelines, managing infrastructure using code, and documenting everything I learn — one Epic at a time.
 
 ---
 
-## 📬 Want to Reach Me?
+## 🔗 Explore My Portfolio
 
-Feel free to [Contact Me](/contact/) — I’m happy to connect!
+- 🚀 [About Me](/about/)
+- 🛠️ [Projects](/projects/)
+- 📚 [Blog](/blog/)
+- 📬 [Contact Me](/contact/)
+
+---
+
+## 🧠 Currently Working On
+
+- [Terraform Basics: EC2 with IaC](/blog/2025-04-11-terraform-basics/)
+
