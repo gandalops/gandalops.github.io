@@ -2,6 +2,7 @@
 layout: home
 title: "Welcome to My DevSecOps Portfolio"
 author_profile: true
+permalink: /
 ---
 
 Hi, I'm **Yogesh Gandal**, an aspiring **DevSecOps Engineer** transitioning from academia into hands-on engineering.
