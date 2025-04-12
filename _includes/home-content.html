@@ -1,272 +1,571 @@
-<header class="site-header">
-  <h1 class="site-title">Yogesh Gandal</h1>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogesh Shankar Gandal - DevSecOps Portfolio</title>
+    <style>
+        /* ====== Base Styles ====== */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #f8f9fa;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #f5f7fa;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent-color);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* ====== Layout Structure ====== */
+        .site-header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .site-title {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        
+        .main-grid {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            gap: 1.5rem;
+        }
+        
+        .sidebar-left {
+            flex: 0 0 20%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            align-self: flex-start;
+        }
+        
+        .main-content {
+            flex: 0 0 60%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .sidebar-right {
+            flex: 0 0 20%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--box-shadow);
+            align-self: flex-start;
+        }
+        
+        .site-footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* ====== Sidebar Styles ====== */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--secondary-color);
+            margin: 0 auto 1rem;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .sidebar-message {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .sidebar-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .sidebar-section ul {
+            list-style: none;
+        }
+        
+        .sidebar-section li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        
+        .sidebar-section li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        
+        /* ====== Main Content Styles ====== */
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .intro-text {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .tech-logos {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .qualifications-list {
+            margin: 1.5rem 0;
+        }
+        
+        .qualification-item {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .emoji-icon {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Project Cards */
+        .project-card {
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 1.2rem;
+            margin-bottom: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            gap: 0.8rem;
+        }
+        
+        .project-link {
+            display: inline-block;
+            margin-top: 0.8rem;
+            font-weight: bold;
+        }
+        
+        /* Blog Post Styles */
+        .post-card {
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            padding: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .comment-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .comment-form {
+            margin-top: 1rem;
+        }
+        
+        .comment-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            margin-top: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+        }
+        
+        .submit-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background-color: var(--primary-color);
+        }
+        
+        /* ====== Footer Styles ====== */
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* ====== Responsive Styles ====== */
+        @media (max-width: 992px) {
+            .main-grid {
+                flex-direction: column;
+            }
+            
+            .sidebar-left,
+            .main-content,
+            .sidebar-right {
+                flex: 1 1 100%;
+                width: 100%;
+            }
+            
+            .sidebar-left, .sidebar-right {
+                order: -1;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .site-title {
+                font-size: 2rem;
+            }
+            
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .project-tech {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="site-title">Yogesh Shankar Gandal</h1>
+    </header>
 
-<div class="main-grid">
-  <!-- LEFT SIDEBAR -->
-  <aside class="sidebar-left">
-    <img src="/assets/images/profile.jpg" alt="Yogesh Gandal" class="profile-pic" />
-    <p class="sidebar-message">
-      Aspiring DevSecOps Engg<br>
-      From Academia to Securing Infra & Pipelines
-    </p>
-  </aside>
+    <div class="main-grid">
+        <!-- LEFT SIDEBAR (20%) -->
+        <aside class="sidebar-left">
+            <img src="/assets/images/profile.jpg" alt="Yogesh Shankar Gandal" class="profile-pic" />
+            <p class="sidebar-message">
+                Aspiring DevSecOps Engineer<br>
+                From Academia to Securing Infra & Pipelines
+            </p>
+            
+            <div class="sidebar-section">
+                <h3>Location</h3>
+                <ul>
+                    <li>India</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Education</h3>
+                <ul>
+                    <li>BE + ME in Mechanical Engineering</li>
+                    <li>MBA in International Management (Germany)</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </aside>
 
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
-    <section class="about-section">
-      <h2 class="section-title">👨‍💻 About Me</h2>
-      <div class="about-content">
-        <p class="intro-text">
-          Hi, I'm <strong class="highlight">Yogesh Gandal</strong>, an aspiring <strong class="highlight">DevSecOps Engineer</strong> specializing in:
-        </p>
-        <div class="tech-logos">
-          <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="40">
-          <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="40" style="margin: 0 15px;">
-          <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins" width="40">
+        <!-- MAIN CONTENT (60%) -->
+        <main class="main-content">
+            <section class="about-section">
+                <h2 class="section-title">👨‍💻 About Me</h2>
+                <div class="about-content">
+                    <p class="intro-text">
+                        Hi, I'm <strong class="highlight">Yogesh Shankar Gandal</strong>, an aspiring <strong class="highlight">DevSecOps Engineer</strong> specializing in:
+                    </p>
+                    <div class="tech-logos">
+                        <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="40">
+                        <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="40">
+                        <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins" width="40">
+                        <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" width="40">
+                        <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" width="40">
+                    </div>
+                    <ul class="qualifications-list">
+                        <li class="qualification-item"><span class="emoji-icon">🎓</span> BE + ME in Mechanical Engineering</li>
+                        <li class="qualification-item"><span class="emoji-icon">🧑‍🏫</span> 10 years as Assistant Professor in India</li>
+                        <li class="qualification-item"><span class="emoji-icon">🎓</span> MBA in International Management (Germany)</li>
+                        <li class="qualification-item"><span class="emoji-icon">🛠️</span> Focused on CI/CD, Terraform, Jenkins, AWS, and secure pipelines</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section class="featured-posts">
+                <h2 class="section-title">🗂️ Recent Posts</h2>
+                <div class="posts-list">
+                    <article class="post-card">
+                        <h3 class="post-title">
+                            <a href="/blog/2025-04-11-terraform-basics/" class="post-link">Terraform Journey: From Zero to EC2 on AWS</a>
+                        </h3>
+                        <p>A detailed walkthrough of my first Terraform project provisioning EC2 instances on AWS.</p>
+                        <div class="post-meta">
+                            <span>April 11, 2025</span>
+                            <span>👁️ 245 views</span>
+                        </div>
+                        <div class="comment-section">
+                            <h4>Comments (3)</h4>
+                            <div class="comment-form">
+                                <input type="text" class="comment-input" placeholder="Add a comment...">
+                                <button class="submit-button">Post</button>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="post-card">
+                        <h3 class="post-title">
+                            <a href="/blog/2025-03-28-jenkins-pipelines/" class="post-link">Building Secure Jenkins Pipelines</a>
+                        </h3>
+                        <p>How I implemented security best practices in Jenkins CI/CD pipelines.</p>
+                        <div class="post-meta">
+                            <span>March 28, 2025</span>
+                            <span>👁️ 189 views</span>
+                        </div>
+                        <div class="comment-section">
+                            <h4>Comments (1)</h4>
+                            <div class="comment-form">
+                                <input type="text" class="comment-input" placeholder="Add a comment...">
+                                <button class="submit-button">Post</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section class="featured-projects">
+                <h2 class="section-title">🚀 Featured Projects</h2>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3><a href="https://github.com/gandalops/gandalops.github.io">🌐 gandalops.github.io</a></h3>
+                        <div class="project-tech">
+                            <img src="https://www.vectorlogo.zone/logos/jekyllrb/jekyllrb-icon.svg" alt="Jekyll" width="24">
+                            <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub Pages" width="24">
+                        </div>
+                    </div>
+                    <p>My public DevSecOps portfolio built using Jekyll and GitHub Pages.</p>
+                    <a href="https://www.opsbygandal.dev/" class="project-link">🔗 View Live</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3><a href="https://github.com/devyogi7579/tf-infra-ec2">🌿 tf-infra-ec2</a></h3>
+                        <div class="project-tech">
+                            <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="24">
+                            <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="24">
+                        </div>
+                    </div>
+                    <p>Terraform project to provision secure EC2 infrastructure with state management.</p>
+                    <a href="https://github.com/devyogi7579/tf-infra-ec2" class="project-link">🔗 GitHub Repo</a>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section id="contact" class="contact-section">
+                <h2 class="section-title">📬 Contact Me</h2>
+                <form action="https://formspree.io/f/mnnplklg" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea name="message" rows="5" class="form-textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- RIGHT SIDEBAR (20%) -->
+        <aside class="sidebar-right">
+            <h2 class="section-title">🛠️ Tools I Work With</h2>
+            <div class="sidebar-section">
+                <h3>Infrastructure</h3>
+                <ul>
+                    <li>Terraform</li>
+                    <li>Docker</li>
+                    <li>Kubernetes</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Cloud</h3>
+                <ul>
+                    <li>AWS</li>
+                    <li>Azure</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Scripting</h3>
+                <ul>
+                    <li>Bash</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Pipeline</h3>
+                <ul>
+                    <li>Jenkins</li>
+                    <li>GitHub Actions</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Security</h3>
+                <ul>
+                    <li>OWASP</li>
+                    <li>SonarQube</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="https://hits.sh/www.opsbygandal.dev/">
+                    <img alt="Visitor count" src="https://hits.sh/www.opsbygandal.dev.svg" />
+                </a>
+            </div>
+            <div class="footer-right">
+                <a href="#contact" class="contact-link">📬 Contact Me</a>
+            </div>
         </div>
-        <ul class="qualifications-list">
-          <li class="qualification-item"><span class="emoji-icon">🎓</span> BE + ME in Mechanical Engineering</li>
-          <li class="qualification-item"><span class="emoji-icon">🧑‍🏫</span> 10 years as Assistant Professor in India</li>
-          <li class="qualification-item"><span class="emoji-icon">🎓</span> MBA in International Management (Germany)</li>
-          <li class="qualification-item"><span class="emoji-icon">🛠️</span> Focused on CI/CD, Terraform, Jenkins, AWS, and secure pipelines</li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section class="featured-posts">
-      <h2 class="section-title">🗂️ Recent Posts</h2>
-      <div class="posts-list">
-        {% for post in site.posts limit:3 %}
-          <article class="post-card">
-            <h3 class="post-title">
-              <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-            </h3>
-            <time class="post-date">{{ post.date | date: "%B %-d, %Y" }}</time>
-          </article>
-        {% endfor %}
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section class="featured-projects">
-      <h2 class="section-title">🚀 Featured Projects</h2>
-
-      <div class="project-card">
-        <div class="project-header">
-          <h3><a href="https://github.com/gandalops/gandalops.github.io">🌐 gandalops.github.io</a></h3>
-          <div class="project-tech">
-            <img src="https://www.vectorlogo.zone/logos/jekyllrb/jekyllrb-icon.svg" alt="Jekyll" width="24">
-            <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub Pages" width="24" style="margin: 0 8px;">
-          </div>
-        </div>
-        <p>My public DevSecOps portfolio built using Jekyll and GitHub Pages.</p>
-        <a href="https://www.opsbygandal.dev/" class="project-link">🔗 View Live</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <h3><a href="https://github.com/devyogi7579/tf-infra-ec2">🌿 tf-infra-ec2</a></h3>
-          <div class="project-tech">
-            <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="24">
-            <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="24" style="margin: 0 8px;">
-          </div>
-        </div>
-        <p>Terraform project to provision secure EC2 infrastructure with state management.</p>
-        <a href="https://github.com/devyogi7579/tf-infra-ec2" class="project-link">🔗 GitHub Repo</a>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section class="blog-highlights">
-      <h2 class="section-title">📝 Blog Highlights</h2>
-      <div class="highlight-content">
-        <p class="highlight-item">
-          ➡️ <a href="/blog/2025-04-11-terraform-basics/" class="highlight-link">Terraform Journey: From Zero to EC2 on AWS</a>
-        </p>
-        <p class="highlight-description">I document every project and lesson learned, Epic by Epic.</p>
-      </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section id="contact" class="contact-section">
-      <h2 class="section-title">📬 Contact Me</h2>
-      <form action="https://formspree.io/f/mnnplklg" method="POST" class="contact-form">
-        <div class="form-group">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" name="name" class="form-input" required>
-        </div>
-        <div class="form-group">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" name="email" class="form-input" required>
-        </div>
-        <div class="form-group">
-          <label for="message" class="form-label">Message</label>
-          <textarea name="message" rows="5" class="form-textarea" required></textarea>
-        </div>
-        <button type="submit" class="submit-button">Send Message</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- RIGHT SIDEBAR -->
-  <aside class="sidebar-right">
-    <h2 class="tools-title">🛠️ Tools I Worked With</h2>
-    <ul class="tools-list">
-      <li><strong>Infra:</strong> Terraform</li>
-      <li><strong>Cloud:</strong> AWS</li>
-      <li><strong>Scripting:</strong> Bash, Python</li>
-      <li><strong>Pipeline:</strong> Jenkins</li>
-    </ul>
-  </aside>
-</div>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-left">
-    <a href="https://hits.sh/www.opsbygandal.dev/">
-      <img alt="Visitor count" src="https://hits.sh/www.opsbygandal.dev.svg" />
-    </a>
-  </div>
-  <div class="footer-right">
-    <a href="#contact" class="contact-link">📬 Contact Me</a>
-  </div>
-</footer>
-
-/* Responsive Grid Layout */
-.main-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 2rem;
-}
-
-.sidebar-left,
-.sidebar-right,
-.main-content {
-  box-sizing: border-box;
-  padding: 1rem;
-}
-
-.sidebar-left,
-.sidebar-right {
-  flex: 1 1 100%;
-  max-width: 100%;
-  text-align: center;
-  background-color: #f8f9fa;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-}
-
-.main-content {
-  flex: 1 1 100%;
-  max-width: 100%;
-}
-
-@media (min-width: 768px) {
-  .sidebar-left,
-  .sidebar-right {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-
-  .main-content {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-
-  .main-grid {
-    flex-wrap: nowrap;
-  }
-}
-
-/* Header */
-.site-header {
-  text-align: center;
-  background-color: #f8f9fa;
-  padding: 1.5rem 1rem;
-  margin-bottom: 2rem;
-}
-
-.site-title {
-  font-size: 2.2rem;
-  margin: 0;
-}
-
-/* Left Sidebar */
-.profile-pic {
-  width: 100px;
-  border-radius: 50%;
-  margin-bottom: 0.5rem;
-}
-
-.sidebar-message {
-  font-size: 0.95rem;
-  font-style: italic;
-  line-height: 1.5;
-}
-
-/* Right Sidebar */
-.tools-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.tools-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.tools-list li {
-  margin-bottom: 0.4rem;
-}
-
-/* Main Content */
-.section-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
-}
-
-.highlight {
-  color: #333;
-  font-weight: bold;
-}
-
-.tech-logos img {
-  vertical-align: middle;
-}
-
-.qualifications-list {
-  padding-left: 1.2rem;
-}
-
-.project-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.section-divider {
-  margin: 2rem 0;
-  border-top: 1px dashed #ccc;
-}
-
-/* Footer */
-.site-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #eaeaea;
-  padding: 1rem 2rem;
-  flex-wrap: wrap;
-}
-
-.site-footer div {
-  margin: 0.5rem 0;
-}
+    </footer>
+</body>
+</html>
