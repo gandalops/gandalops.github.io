@@ -1,11 +1,21 @@
-cat > _includes/blog-featured.html << 'EOF'
 <div class="featured-posts">
+  <h2 class="section-title">🗂️ Recent Blog Posts</h2>
+
   {% if site.posts.size > 0 %}
-    <ul>
+    <ul class="featured-posts-list">
       {% for post in site.posts limit:3 %}
-        <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <small>{{ post.date | date: "%b %-d, %Y" }}</small>
+        <li class="post-card">
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <div class="post-meta">
+            <span>📅 {{ post.date | date: "%b %-d, %Y" }}</span>
+            <span>
+              👁️ 
+              <img src="https://hits.sh/www.opsbygandal.dev{{ post.url }}.svg?style=flat-square" alt="Views" />
+            </span>
+            <span class="read-time">⏱️ <!-- will be auto-filled --></span>
+          </div>
         </li>
       {% endfor %}
     </ul>
@@ -13,4 +23,18 @@ cat > _includes/blog-featured.html << 'EOF'
     <p>No posts yet. Check back soon!</p>
   {% endif %}
 </div>
-EOF
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const posts = document.querySelectorAll(".post-card");
+    posts.forEach(post => {
+      const title = post.querySelector("h3")?.innerText || "";
+      const estimatedWords = 200; // approx. short post
+      const readingTime = Math.ceil(estimatedWords / 200); // 200 wpm
+      const readTimeSpan = post.querySelector(".read-time");
+      if (readTimeSpan) {
+        readTimeSpan.textContent = `${readingTime} min read`;
+      }
+    });
+  });
+</script>
