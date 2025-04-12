@@ -25,7 +25,7 @@ jobs:
       - name: Build site with Jekyll
         run: bundle exec jekyll build
 
-      - name: Debug: List _site contents
+      - name: Debug List _site contents
         run: ls -la _site
 
       - name: Deploy to GitHub Pages
