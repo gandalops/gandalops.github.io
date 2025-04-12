@@ -23,8 +23,11 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - vendor
-  - .github
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
 # Author Profile
 author:

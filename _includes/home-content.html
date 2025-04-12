@@ -5,498 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yogesh Shankar Gandal - DevSecOps Engineer</title>
     <meta name="description" content="Portfolio of Yogesh Shankar Gandal, DevSecOps Engineer specializing in CI/CD, Terraform, AWS, and secure infrastructure">
-    <style>
-        /* ====== Modern CSS Variables ====== */
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #f8f9fa;
-            --dark: #333;
-            --gray: #6c757d;
-            --radius: 8px;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        /* ====== Base Reset & Typography ====== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: #f5f7fa;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1, h2, h3, h4 {
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        a {
-            color: var(--secondary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--accent);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ====== Layout Components ====== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .site-header {
-            background: linear-gradient(135deg, var(--primary), #1a2a3a);
-            color: white;
-            padding: 2.5rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .site-title {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #fff, #ddd);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .site-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            font-weight: 400;
-        }
-
-        .main-grid {
-            display: grid;
-            grid-template-columns: 20% 60% 20%;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        /* ====== Sidebar Styles ====== */
-        .sidebar {
-            background: white;
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 1rem;
-            height: min-content;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid var(--secondary);
-            margin: 0 auto 1.5rem;
-            object-fit: cover;
-            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
-        }
-
-        .sidebar-section {
-            margin-bottom: 1.8rem;
-        }
-
-        .sidebar-section h3 {
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary);
-        }
-
-        .sidebar-section ul {
-            list-style: none;
-        }
-
-        .sidebar-section li {
-            margin-bottom: 0.6rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .sidebar-section li:before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--primary);
-            font-size: 1.4rem;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            color: var(--secondary);
-            transform: translateY(-3px);
-        }
-
-        /* ====== Main Content Styles ====== */
-        .main-content {
-            background: white;
-            border-radius: var(--radius);
-            padding: 2rem;
-            box-shadow: var(--shadow);
-        }
-
-        .section-title {
-            color: var(--primary);
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title:after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-
-        .intro-text {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
-        .highlight {
-            color: var(--secondary);
-            font-weight: 600;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .tech-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--light);
-            padding: 0.6rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .tech-item img {
-            width: 20px;
-            height: 20px;
-        }
-
-        .qualifications-list {
-            margin: 1.8rem 0;
-        }
-
-        .qualification-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            gap: 0.8rem;
-        }
-
-        .emoji-icon {
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        /* ====== Project Cards ====== */
-        .project-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-            border-color: rgba(52, 152, 219, 0.2);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .project-tech {
-            display: flex;
-            gap: 0.8rem;
-        }
-
-        .project-tech img {
-            width: 24px;
-            height: 24px;
-            transition: var(--transition);
-        }
-
-        .project-tech img:hover {
-            transform: scale(1.2);
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            font-weight: 600;
-            color: var(--secondary);
-        }
-
-        /* ====== Blog Post Cards ====== */
-        .post-card {
-            background: white;
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-
-        .post-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .post-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        .post-stats {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .post-stats span {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .comment-section {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .comment-form {
-            margin-top: 1rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .comment-input {
-            flex: 1;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: var(--radius);
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .comment-input:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-
-        /* ====== Contact Form ====== */
-        .contact-form {
-            margin-top: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--primary);
-        }
-
-        .form-input, .form-textarea {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: var(--radius);
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .form-input:focus, .form-textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-
-        .form-textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 0.8rem 1.8rem;
-            border-radius: var(--radius);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .submit-button:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(41, 128, 185, 0.3);
-        }
-
-        /* ====== Footer ====== */
-        .site-footer {
-            background: var(--primary);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: white;
-            opacity: 0.8;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--secondary);
-        }
-
-        .copyright {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        /* ====== Responsive Design ====== */
-        @media (max-width: 1024px) {
-            .main-grid {
-                grid-template-columns: 25% 50% 25%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .sidebar {
-                position: static;
-                order: -1;
-            }
-            
-            .site-title {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .project-header, .post-meta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-            
-            .tech-stack {
-                justify-content: center;
-            }
-            
-            .comment-form {
-                flex-direction: column;
-            }
-        }
-
-        /* ====== Animations ====== */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .main-content, .sidebar {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-
-        .sidebar-right {
-            animation-delay: 0.2s;
-        }
-    </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="home-content.css">
 </head>
 <body>
     <header class="site-header">
@@ -527,14 +38,14 @@
                     <ul>
                         <li>BE + ME in Mechanical Engineering</li>
                         <li>MBA in International Management</li>
-                        <li>PMP Certified</li>
+                        <li>PMP from PMI</li>
                     </ul>
                 </div>
                 
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
                     <a href="#" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
                 </div>
             </aside>
@@ -542,7 +53,7 @@
             <!-- MAIN CONTENT -->
             <main class="main-content">
                 <section class="about-section">
-                    <h2 class="section-title">👨‍💻 About Me</h2>
+                    <h2 class="section-title"><i class="fas fa-user-tie"></i> About Me</h2>
                     <div class="about-content">
                         <p class="intro-text">
                             Hi, I'm <strong class="highlight">Yogesh Shankar Gandal</strong>, a <strong class="highlight">DevSecOps Engineer</strong> with a unique background combining mechanical engineering, academia, and international business management. I specialize in building secure, automated infrastructure and CI/CD pipelines.
@@ -573,19 +84,19 @@
                         
                         <ul class="qualifications-list">
                             <li class="qualification-item">
-                                <span class="emoji-icon">🎓</span>
+                                <span class="emoji-icon"><i class="fas fa-graduation-cap"></i></span>
                                 <span>Advanced degrees in Mechanical Engineering with 10 years of academic experience teaching complex technical concepts</span>
                             </li>
                             <li class="qualification-item">
-                                <span class="emoji-icon">🌍</span>
+                                <span class="emoji-icon"><i class="fas fa-globe"></i></span>
                                 <span>MBA in International Management from Germany, providing global business perspective to technical solutions</span>
                             </li>
                             <li class="qualification-item">
-                                <span class="emoji-icon">🛡️</span>
+                                <span class="emoji-icon"><i class="fas fa-shield-alt"></i></span>
                                 <span>Specialized in implementing security best practices throughout the CI/CD pipeline and infrastructure</span>
                             </li>
                             <li class="qualification-item">
-                                <span class="emoji-icon">⚙️</span>
+                                <span class="emoji-icon"><i class="fas fa-cogs"></i></span>
                                 <span>Passionate about Infrastructure as Code (Terraform), cloud security, and automating everything</span>
                             </li>
                         </ul>
@@ -593,7 +104,7 @@
                 </section>
 
                 <section class="featured-posts">
-                    <h2 class="section-title">📝 Latest Articles</h2>
+                    <h2 class="section-title"><i class="fas fa-newspaper"></i> Latest Articles</h2>
                     
                     <article class="post-card">
                         <h3>
@@ -605,15 +116,15 @@
                             A comprehensive guide documenting my transition from academic concepts to implementing real-world Terraform modules for AWS, covering state management, modules, and security considerations.
                         </p>
                         <div class="post-meta">
-                            <span>📅 April 11, 2025</span>
+                            <span><i class="far fa-calendar-alt"></i> April 11, 2025</span>
                             <div class="post-stats">
-                                <span>👁️ 1.2K views</span>
-                                <span>⏱️ 5 min read</span>
-                                <span>💬 14 comments</span>
+                                <span class="view-counter"><i class="far fa-eye"></i> <span class="view-count">Loading...</span></span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                                <span><i class="far fa-comments"></i> 14 comments</span>
                             </div>
                         </div>
                         <div class="comment-section">
-                            <h4>💬 Join the Discussion</h4>
+                            <h4><i class="far fa-comment-dots"></i> Join the Discussion</h4>
                             <form class="comment-form">
                                 <input type="text" class="comment-input" placeholder="Share your thoughts..." aria-label="Comment input">
                                 <button type="submit" class="submit-button">
@@ -633,24 +144,24 @@
                             How I implemented security best practices in Jenkins CI/CD pipelines, including credential management, pipeline libraries, and integrating security scanning tools.
                         </p>
                         <div class="post-meta">
-                            <span>📅 March 28, 2025</span>
+                            <span><i class="far fa-calendar-alt"></i> March 28, 2025</span>
                             <div class="post-stats">
-                                <span>👁️ 845 views</span>
-                                <span>⏱️ 7 min read</span>
-                                <span>💬 8 comments</span>
+                                <span class="view-counter"><i class="far fa-eye"></i> <span class="view-count">Loading...</span></span>
+                                <span><i class="far fa-clock"></i> 7 min read</span>
+                                <span><i class="far fa-comments"></i> 8 comments</span>
                             </div>
                         </div>
                     </article>
                 </section>
 
                 <section class="featured-projects">
-                    <h2 class="section-title">🚀 Featured Projects</h2>
+                    <h2 class="section-title"><i class="fas fa-rocket"></i> Featured Projects</h2>
                     
                     <div class="project-card">
                         <div class="project-header">
                             <h3>
                                 <a href="https://github.com/gandalops/gandalops.github.io">
-                                    <i class="fas fa-globe"></i> DevSecOps Portfolio Platform
+                                    <i class="fas fa-laptop-code"></i> DevSecOps Portfolio Platform
                                 </a>
                             </h3>
                             <div class="project-tech">
@@ -660,7 +171,7 @@
                             </div>
                         </div>
                         <p>
-                            My public DevSecOps portfolio built with modern web technologies, featuring automated deployments, CI/CD integration, and security headers. The project demonstrates infrastructure as code principles applied to personal branding.
+                            My public DevSecOps portfolio built with modern web technologies, featuring automated deployments, CI/CD integration, and security headers.
                         </p>
                         <div class="project-links">
                             <a href="https://www.opsbygandal.dev/" class="project-link">
@@ -686,7 +197,7 @@
                             </div>
                         </div>
                         <p>
-                            Production-grade Terraform modules for provisioning secure EC2 infrastructure with state management, monitoring integration, and security hardening. The framework includes reusable modules for different environments and compliance requirements.
+                            Production-grade Terraform modules for provisioning secure EC2 infrastructure with state management, monitoring integration, and security hardening.
                         </p>
                         <a href="https://github.com/devyogi7579/tf-infra-ec2" class="project-link">
                             <i class="fab fa-github"></i> Explore on GitHub
@@ -695,7 +206,7 @@
                 </section>
 
                 <section id="contact" class="contact-section">
-                    <h2 class="section-title">📬 Get In Touch</h2>
+                    <h2 class="section-title"><i class="fas fa-envelope"></i> Get In Touch</h2>
                     <form action="https://formspree.io/f/mnnplklg" method="POST" class="contact-form">
                         <div class="form-group">
                             <label for="name" class="form-label">Your Name</label>
@@ -718,12 +229,12 @@
 
             <!-- RIGHT SIDEBAR -->
             <aside class="sidebar sidebar-right">
-                <h2 class="section-title">🛠️ Technical Toolkit</h2>
+                <h2 class="section-title"><i class="fas fa-tools"></i> Technical Toolkit</h2>
                 
                 <div class="sidebar-section">
                     <h3>Infrastructure</h3>
                     <ul>
-                        <li>Terraform (Advanced)</li>
+                        <li>Terraform</li>
                         <li>Docker & Kubernetes</li>
                         <li>Ansible</li>
                         <li>Packer</li>
@@ -733,9 +244,7 @@
                 <div class="sidebar-section">
                     <h3>Cloud Platforms</h3>
                     <ul>
-                        <li>AWS (Certified)</li>
-                        <li>Azure</li>
-                        <li>Google Cloud</li>
+                        <li>AWS</li>
                     </ul>
                 </div>
                 
@@ -745,7 +254,6 @@
                         <li>Jenkins</li>
                         <li>GitHub Actions</li>
                         <li>ArgoCD</li>
-                        <li>Tekton</li>
                     </ul>
                 </div>
                 
@@ -755,17 +263,13 @@
                         <li>OWASP ZAP</li>
                         <li>SonarQube</li>
                         <li>Trivy</li>
-                        <li>Checkov</li>
                     </ul>
                 </div>
                 
                 <div class="sidebar-section">
                     <h3>Certifications</h3>
                     <ul>
-                        <li>AWS Certified</li>
-                        <li>Terraform Certified</li>
-                        <li>PMP</li>
-                        <li>Security+</li>
+                        <li>PMP from PMI</li>
                     </ul>
                 </div>
             </aside>
@@ -778,7 +282,7 @@
                 <div class="footer-links">
                     <a href="#"><i class="fab fa-github"></i> GitHub</a>
                     <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fab fa-x-twitter"></i> X</a>
                     <a href="#"><i class="fas fa-rss"></i> Blog</a>
                 </div>
                 <p class="copyright">
@@ -792,8 +296,27 @@
     </footer>
 
     <script>
-        // Dynamic reading time calculation
+        // Real-time view counter implementation
         document.addEventListener('DOMContentLoaded', function() {
+            // Function to fetch view counts (replace with your actual API endpoint)
+            function fetchViewCounts() {
+                // Example: Replace with your actual API call
+                const articles = document.querySelectorAll('.view-counter');
+                
+                articles.forEach((counter, index) => {
+                    // Simulate API call with timeout
+                    setTimeout(() => {
+                        // Replace this with actual fetch to your view counter API
+                        const views = Math.floor(Math.random() * 1000) + 500; // Random number for demo
+                        counter.querySelector('.view-count').textContent = views.toLocaleString();
+                    }, index * 300);
+                });
+            }
+            
+            // Call the function when page loads
+            fetchViewCounts();
+            
+            // Dynamic reading time calculation
             const articles = document.querySelectorAll('.post-card');
             
             articles.forEach(article => {
