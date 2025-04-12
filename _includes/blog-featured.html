@@ -12,9 +12,12 @@
             <span>📅 {{ post.date | date: "%b %-d, %Y" }}</span>
             <span>
               👁️ 
-              <img src="https://hits.sh/www.opsbygandal.dev{{ post.url }}.svg?style=flat-square" alt="Views" />
+              <img 
+                src="https://hits.sh/www.opsbygandal.dev{{ post.url }}.svg?style=flat-square" 
+                alt="Views for {{ post.title }}" 
+              />
             </span>
-            <span class="read-time">⏱️ <!-- will be auto-filled --></span>
+            <span class="read-time">⏱️</span>
           </div>
         </li>
       {% endfor %}
@@ -28,12 +31,12 @@
   document.addEventListener("DOMContentLoaded", function () {
     const posts = document.querySelectorAll(".post-card");
     posts.forEach(post => {
-      const title = post.querySelector("h3")?.innerText || "";
-      const estimatedWords = 200; // approx. short post
-      const readingTime = Math.ceil(estimatedWords / 200); // 200 wpm
+      const text = post.innerText || "";
+      const wordCount = text.split(/\s+/).length;
+      const estimatedReadingTime = Math.ceil(wordCount / 200); // Avg. 200 wpm
       const readTimeSpan = post.querySelector(".read-time");
       if (readTimeSpan) {
-        readTimeSpan.textContent = `${readingTime} min read`;
+        readTimeSpan.textContent = `${estimatedReadingTime} min read`;
       }
     });
   });
