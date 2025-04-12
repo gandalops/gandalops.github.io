@@ -3,569 +3,820 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yogesh Shankar Gandal - DevSecOps Portfolio</title>
+    <title>Yogesh Shankar Gandal - DevSecOps Engineer</title>
+    <meta name="description" content="Portfolio of Yogesh Shankar Gandal, DevSecOps Engineer specializing in CI/CD, Terraform, AWS, and secure infrastructure">
     <style>
-        /* ====== Base Styles ====== */
+        /* ====== Modern CSS Variables ====== */
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-bg: #f8f9fa;
-            --dark-text: #333;
-            --light-text: #f8f9fa;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+            --radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-        
+
+        /* ====== Base Reset & Typography ====== */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: var(--dark-text);
+            color: var(--dark);
             background-color: #f5f7fa;
+            -webkit-font-smoothing: antialiased;
         }
-        
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
         a {
+            color: var(--secondary);
             text-decoration: none;
-            color: var(--secondary-color);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
-        
+
         a:hover {
-            color: var(--accent-color);
+            color: var(--accent);
         }
-        
+
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
-        
-        /* ====== Layout Structure ====== */
-        .site-header {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 2rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .site-title {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-        
-        .main-grid {
-            display: flex;
+
+        /* ====== Layout Components ====== */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
-            gap: 1.5rem;
         }
-        
-        .sidebar-left {
-            flex: 0 0 20%;
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            box-shadow: var(--box-shadow);
-            align-self: flex-start;
-        }
-        
-        .main-content {
-            flex: 0 0 60%;
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .sidebar-right {
-            flex: 0 0 20%;
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            box-shadow: var(--box-shadow);
-            align-self: flex-start;
-        }
-        
-        .site-footer {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 1.5rem;
+
+        .site-header {
+            background: linear-gradient(135deg, var(--primary), #1a2a3a);
+            color: white;
+            padding: 2.5rem 0;
             text-align: center;
-            margin-top: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
+        .site-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, #ddd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .site-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
         /* ====== Sidebar Styles ====== */
+        .sidebar {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 1rem;
+            height: min-content;
+        }
+
         .profile-pic {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 4px solid var(--secondary-color);
-            margin: 0 auto 1rem;
-            display: block;
+            border: 4px solid var(--secondary);
+            margin: 0 auto 1.5rem;
             object-fit: cover;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
         }
-        
-        .sidebar-message {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: var(--primary-color);
-        }
-        
+
         .sidebar-section {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
-        
+
         .sidebar-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.8rem;
+            color: var(--primary);
             font-size: 1.2rem;
-            border-bottom: 2px solid var(--secondary-color);
+            margin-bottom: 0.8rem;
             padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
         }
-        
+
         .sidebar-section ul {
             list-style: none;
         }
-        
+
         .sidebar-section li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
+            margin-bottom: 0.6rem;
             position: relative;
+            padding-left: 1.5rem;
         }
-        
+
         .sidebar-section li:before {
             content: "▹";
             position: absolute;
             left: 0;
-            color: var(--secondary-color);
+            color: var(--secondary);
         }
-        
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
         /* ====== Main Content Styles ====== */
-        .section-title {
-            color: var(--primary-color);
-            margin-bottom: 1.2rem;
-            font-size: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
+        .main-content {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
         }
-        
+
+        .section-title {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
         .section-title:after {
             content: "";
             position: absolute;
-            bottom: 0;
+            bottom: -8px;
             left: 0;
             width: 50px;
-            height: 3px;
-            background-color: var(--secondary-color);
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
         }
-        
+
         .intro-text {
-            margin-bottom: 1.2rem;
             font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
         }
-        
+
         .highlight {
-            color: var(--secondary-color);
-            font-weight: bold;
+            color: var(--secondary);
+            font-weight: 600;
         }
-        
-        .tech-logos {
+
+        .tech-stack {
             display: flex;
-            gap: 1rem;
-            margin: 1rem 0;
             flex-wrap: wrap;
-        }
-        
-        .qualifications-list {
+            gap: 1rem;
             margin: 1.5rem 0;
         }
-        
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--light);
+            padding: 0.6rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .tech-item img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .qualifications-list {
+            margin: 1.8rem 0;
+        }
+
         .qualification-item {
-            margin-bottom: 0.8rem;
             display: flex;
             align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 0.8rem;
         }
-        
+
         .emoji-icon {
-            margin-right: 0.8rem;
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
-        
-        /* Project Cards */
+
+        /* ====== Project Cards ====== */
         .project-card {
-            background-color: var(--light-bg);
-            border-radius: var(--border-radius);
-            padding: 1.2rem;
-            margin-bottom: 1.2rem;
-            transition: transform 0.3s ease;
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
+
         .project-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            border-color: rgba(52, 152, 219, 0.2);
         }
-        
+
         .project-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
-        
+
         .project-tech {
             display: flex;
             gap: 0.8rem;
         }
-        
+
+        .project-tech img {
+            width: 24px;
+            height: 24px;
+            transition: var(--transition);
+        }
+
+        .project-tech img:hover {
+            transform: scale(1.2);
+        }
+
         .project-link {
-            display: inline-block;
-            margin-top: 0.8rem;
-            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--secondary);
         }
-        
-        /* Blog Post Styles */
+
+        /* ====== Blog Post Cards ====== */
         .post-card {
-            background-color: var(--light-bg);
-            border-radius: var(--border-radius);
-            padding: 1.2rem;
-            margin-bottom: 1.2rem;
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
         }
-        
+
+        .post-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
         .post-meta {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-top: 1rem;
             font-size: 0.9rem;
-            color: #666;
+            color: var(--gray);
         }
-        
+
+        .post-stats {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .post-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
         .comment-section {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid #eee;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
-        
+
         .comment-form {
             margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
         }
-        
+
         .comment-input {
-            width: 100%;
+            flex: 1;
             padding: 0.8rem;
             border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            margin-bottom: 0.5rem;
+            border-radius: var(--radius);
+            font-family: inherit;
+            transition: var(--transition);
         }
-        
-        /* Contact Form */
+
+        .comment-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        /* ====== Contact Form ====== */
         .contact-form {
-            margin-top: 1.2rem;
+            margin-top: 1.5rem;
         }
-        
+
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
-        
+
         .form-label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: bold;
+            font-weight: 500;
+            color: var(--primary);
         }
-        
+
         .form-input, .form-textarea {
             width: 100%;
-            padding: 0.8rem;
+            padding: 0.8rem 1rem;
             border: 1px solid #ddd;
-            border-radius: var(--border-radius);
+            border-radius: var(--radius);
             font-family: inherit;
+            transition: var(--transition);
         }
-        
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
         .form-textarea {
-            min-height: 120px;
+            min-height: 150px;
+            resize: vertical;
         }
-        
+
         .submit-button {
-            background-color: var(--secondary-color);
+            background: var(--secondary);
             color: white;
             border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: var(--border-radius);
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--radius);
+            font-weight: 600;
             cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
+
         .submit-button:hover {
-            background-color: var(--primary-color);
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(41, 128, 185, 0.3);
         }
-        
-        /* ====== Footer Styles ====== */
+
+        /* ====== Footer ====== */
+        .site-footer {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
         .footer-content {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 1rem;
         }
-        
-        /* ====== Responsive Styles ====== */
-        @media (max-width: 992px) {
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+        }
+
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* ====== Responsive Design ====== */
+        @media (max-width: 1024px) {
             .main-grid {
-                flex-direction: column;
-            }
-            
-            .sidebar-left,
-            .main-content,
-            .sidebar-right {
-                flex: 1 1 100%;
-                width: 100%;
-            }
-            
-            .sidebar-left, .sidebar-right {
-                order: -1;
-                margin-bottom: 1.5rem;
+                grid-template-columns: 25% 50% 25%;
             }
         }
-        
+
         @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .sidebar {
+                position: static;
+                order: -1;
+            }
+            
             .site-title {
                 font-size: 2rem;
             }
-            
-            .project-header {
+        }
+
+        @media (max-width: 480px) {
+            .project-header, .post-meta {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 0.5rem;
             }
             
-            .project-tech {
-                margin-top: 0.5rem;
+            .tech-stack {
+                justify-content: center;
+            }
+            
+            .comment-form {
+                flex-direction: column;
             }
         }
+
+        /* ====== Animations ====== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-content, .sidebar {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .sidebar-right {
+            animation-delay: 0.2s;
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="site-header">
-        <h1 class="site-title">Yogesh Shankar Gandal</h1>
+        <div class="container">
+            <h1 class="site-title">Yogesh Shankar Gandal</h1>
+            <p class="site-subtitle">DevSecOps Engineer | Cloud Infrastructure Specialist</p>
+        </div>
     </header>
 
-    <div class="main-grid">
-        <!-- LEFT SIDEBAR (20%) -->
-        <aside class="sidebar-left">
-            <img src="/assets/images/profile.jpg" alt="Yogesh Shankar Gandal" class="profile-pic" />
-            <p class="sidebar-message">
-                Aspiring DevSecOps Engineer<br>
-                From Academia to Securing Infra & Pipelines
-            </p>
-            
-            <div class="sidebar-section">
-                <h3>Location</h3>
-                <ul>
-                    <li>India</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Education</h3>
-                <ul>
-                    <li>BE + ME in Mechanical Engineering</li>
-                    <li>MBA in International Management (Germany)</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-        </aside>
-
-        <!-- MAIN CONTENT (60%) -->
-        <main class="main-content">
-            <section class="about-section">
-                <h2 class="section-title">👨‍💻 About Me</h2>
-                <div class="about-content">
-                    <p class="intro-text">
-                        Hi, I'm <strong class="highlight">Yogesh Shankar Gandal</strong>, an aspiring <strong class="highlight">DevSecOps Engineer</strong> specializing in:
-                    </p>
-                    <div class="tech-logos">
-                        <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="40">
-                        <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="40">
-                        <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins" width="40">
-                        <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" width="40">
-                        <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python" width="40">
-                    </div>
-                    <ul class="qualifications-list">
-                        <li class="qualification-item"><span class="emoji-icon">🎓</span> BE + ME in Mechanical Engineering</li>
-                        <li class="qualification-item"><span class="emoji-icon">🧑‍🏫</span> 10 years as Assistant Professor in India</li>
-                        <li class="qualification-item"><span class="emoji-icon">🎓</span> MBA in International Management (Germany)</li>
-                        <li class="qualification-item"><span class="emoji-icon">🛠️</span> Focused on CI/CD, Terraform, Jenkins, AWS, and secure pipelines</li>
+    <div class="container">
+        <div class="main-grid">
+            <!-- LEFT SIDEBAR -->
+            <aside class="sidebar sidebar-left">
+                <img src="/assets/images/profile.jpg" alt="Yogesh Shankar Gandal" class="profile-pic">
+                <p class="sidebar-message">
+                    Transforming academic expertise into secure, scalable infrastructure solutions
+                </p>
+                
+                <div class="sidebar-section">
+                    <h3>Location</h3>
+                    <ul>
+                        <li>Germany</li>
                     </ul>
                 </div>
-            </section>
+                
+                <div class="sidebar-section">
+                    <h3>Education</h3>
+                    <ul>
+                        <li>BE + ME in Mechanical Engineering</li>
+                        <li>MBA in International Management</li>
+                        <li>PMP Certified</li>
+                    </ul>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
+                </div>
+            </aside>
 
-            <div class="section-divider"></div>
+            <!-- MAIN CONTENT -->
+            <main class="main-content">
+                <section class="about-section">
+                    <h2 class="section-title">👨‍💻 About Me</h2>
+                    <div class="about-content">
+                        <p class="intro-text">
+                            Hi, I'm <strong class="highlight">Yogesh Shankar Gandal</strong>, a <strong class="highlight">DevSecOps Engineer</strong> with a unique background combining mechanical engineering, academia, and international business management. I specialize in building secure, automated infrastructure and CI/CD pipelines.
+                        </p>
+                        
+                        <div class="tech-stack">
+                            <div class="tech-item">
+                                <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform">
+                                <span>Terraform</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS">
+                                <span>AWS</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins">
+                                <span>Jenkins</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker">
+                                <span>Docker</span>
+                            </div>
+                            <div class="tech-item">
+                                <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python">
+                                <span>Python</span>
+                            </div>
+                        </div>
+                        
+                        <ul class="qualifications-list">
+                            <li class="qualification-item">
+                                <span class="emoji-icon">🎓</span>
+                                <span>Advanced degrees in Mechanical Engineering with 10 years of academic experience teaching complex technical concepts</span>
+                            </li>
+                            <li class="qualification-item">
+                                <span class="emoji-icon">🌍</span>
+                                <span>MBA in International Management from Germany, providing global business perspective to technical solutions</span>
+                            </li>
+                            <li class="qualification-item">
+                                <span class="emoji-icon">🛡️</span>
+                                <span>Specialized in implementing security best practices throughout the CI/CD pipeline and infrastructure</span>
+                            </li>
+                            <li class="qualification-item">
+                                <span class="emoji-icon">⚙️</span>
+                                <span>Passionate about Infrastructure as Code (Terraform), cloud security, and automating everything</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
 
-            <section class="featured-posts">
-                <h2 class="section-title">🗂️ Recent Posts</h2>
-                <div class="posts-list">
+                <section class="featured-posts">
+                    <h2 class="section-title">📝 Latest Articles</h2>
+                    
                     <article class="post-card">
-                        <h3 class="post-title">
-                            <a href="/blog/2025-04-11-terraform-basics/" class="post-link">Terraform Journey: From Zero to EC2 on AWS</a>
+                        <h3>
+                            <a href="/blog/2025-04-11-terraform-basics/" class="post-link">
+                                Terraform Journey: From Zero to Production-Grade AWS Infrastructure
+                            </a>
                         </h3>
-                        <p>A detailed walkthrough of my first Terraform project provisioning EC2 instances on AWS.</p>
+                        <p>
+                            A comprehensive guide documenting my transition from academic concepts to implementing real-world Terraform modules for AWS, covering state management, modules, and security considerations.
+                        </p>
                         <div class="post-meta">
-                            <span>April 11, 2025</span>
-                            <span>👁️ 245 views</span>
+                            <span>📅 April 11, 2025</span>
+                            <div class="post-stats">
+                                <span>👁️ 1.2K views</span>
+                                <span>⏱️ 5 min read</span>
+                                <span>💬 14 comments</span>
+                            </div>
                         </div>
                         <div class="comment-section">
-                            <h4>Comments (3)</h4>
-                            <div class="comment-form">
-                                <input type="text" class="comment-input" placeholder="Add a comment...">
-                                <button class="submit-button">Post</button>
-                            </div>
+                            <h4>💬 Join the Discussion</h4>
+                            <form class="comment-form">
+                                <input type="text" class="comment-input" placeholder="Share your thoughts..." aria-label="Comment input">
+                                <button type="submit" class="submit-button">
+                                    <i class="fas fa-paper-plane"></i> Post
+                                </button>
+                            </form>
                         </div>
                     </article>
                     
                     <article class="post-card">
-                        <h3 class="post-title">
-                            <a href="/blog/2025-03-28-jenkins-pipelines/" class="post-link">Building Secure Jenkins Pipelines</a>
+                        <h3>
+                            <a href="/blog/2025-03-28-jenkins-pipelines/" class="post-link">
+                                Building Secure Jenkins Pipelines: From Basic to Blue Ocean
+                            </a>
                         </h3>
-                        <p>How I implemented security best practices in Jenkins CI/CD pipelines.</p>
+                        <p>
+                            How I implemented security best practices in Jenkins CI/CD pipelines, including credential management, pipeline libraries, and integrating security scanning tools.
+                        </p>
                         <div class="post-meta">
-                            <span>March 28, 2025</span>
-                            <span>👁️ 189 views</span>
-                        </div>
-                        <div class="comment-section">
-                            <h4>Comments (1)</h4>
-                            <div class="comment-form">
-                                <input type="text" class="comment-input" placeholder="Add a comment...">
-                                <button class="submit-button">Post</button>
+                            <span>📅 March 28, 2025</span>
+                            <div class="post-stats">
+                                <span>👁️ 845 views</span>
+                                <span>⏱️ 7 min read</span>
+                                <span>💬 8 comments</span>
                             </div>
                         </div>
                     </article>
-                </div>
-            </section>
+                </section>
 
-            <div class="section-divider"></div>
-
-            <section class="featured-projects">
-                <h2 class="section-title">🚀 Featured Projects</h2>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3><a href="https://github.com/gandalops/gandalops.github.io">🌐 gandalops.github.io</a></h3>
-                        <div class="project-tech">
-                            <img src="https://www.vectorlogo.zone/logos/jekyllrb/jekyllrb-icon.svg" alt="Jekyll" width="24">
-                            <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub Pages" width="24">
+                <section class="featured-projects">
+                    <h2 class="section-title">🚀 Featured Projects</h2>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>
+                                <a href="https://github.com/gandalops/gandalops.github.io">
+                                    <i class="fas fa-globe"></i> DevSecOps Portfolio Platform
+                                </a>
+                            </h3>
+                            <div class="project-tech">
+                                <img src="https://www.vectorlogo.zone/logos/jekyllrb/jekyllrb-icon.svg" alt="Jekyll" title="Jekyll">
+                                <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub Pages" title="GitHub Pages">
+                                <img src="https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg" alt="Netlify" title="Netlify">
+                            </div>
+                        </div>
+                        <p>
+                            My public DevSecOps portfolio built with modern web technologies, featuring automated deployments, CI/CD integration, and security headers. The project demonstrates infrastructure as code principles applied to personal branding.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://www.opsbygandal.dev/" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/gandalops/gandalops.github.io" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
                         </div>
                     </div>
-                    <p>My public DevSecOps portfolio built using Jekyll and GitHub Pages.</p>
-                    <a href="https://www.opsbygandal.dev/" class="project-link">🔗 View Live</a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3><a href="https://github.com/devyogi7579/tf-infra-ec2">🌿 tf-infra-ec2</a></h3>
-                        <div class="project-tech">
-                            <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="24">
-                            <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="24">
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>
+                                <a href="https://github.com/devyogi7579/tf-infra-ec2">
+                                    <i class="fas fa-server"></i> Terraform AWS EC2 Framework
+                                </a>
+                            </h3>
+                            <div class="project-tech">
+                                <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" title="Terraform">
+                                <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" title="AWS">
+                                <img src="https://www.vectorlogo.zone/logos/ansible/ansible-icon.svg" alt="Ansible" title="Ansible">
+                            </div>
                         </div>
+                        <p>
+                            Production-grade Terraform modules for provisioning secure EC2 infrastructure with state management, monitoring integration, and security hardening. The framework includes reusable modules for different environments and compliance requirements.
+                        </p>
+                        <a href="https://github.com/devyogi7579/tf-infra-ec2" class="project-link">
+                            <i class="fab fa-github"></i> Explore on GitHub
+                        </a>
                     </div>
-                    <p>Terraform project to provision secure EC2 infrastructure with state management.</p>
-                    <a href="https://github.com/devyogi7579/tf-infra-ec2" class="project-link">🔗 GitHub Repo</a>
+                </section>
+
+                <section id="contact" class="contact-section">
+                    <h2 class="section-title">📬 Get In Touch</h2>
+                    <form action="https://formspree.io/f/mnnplklg" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="form-textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </section>
+            </main>
+
+            <!-- RIGHT SIDEBAR -->
+            <aside class="sidebar sidebar-right">
+                <h2 class="section-title">🛠️ Technical Toolkit</h2>
+                
+                <div class="sidebar-section">
+                    <h3>Infrastructure</h3>
+                    <ul>
+                        <li>Terraform (Advanced)</li>
+                        <li>Docker & Kubernetes</li>
+                        <li>Ansible</li>
+                        <li>Packer</li>
+                    </ul>
                 </div>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <section id="contact" class="contact-section">
-                <h2 class="section-title">📬 Contact Me</h2>
-                <form action="https://formspree.io/f/mnnplklg" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" name="name" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea name="message" rows="5" class="form-textarea" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
-            </section>
-        </main>
-
-        <!-- RIGHT SIDEBAR (20%) -->
-        <aside class="sidebar-right">
-            <h2 class="section-title">🛠️ Tools I Work With</h2>
-            <div class="sidebar-section">
-                <h3>Infrastructure</h3>
-                <ul>
-                    <li>Terraform</li>
-                    <li>Docker</li>
-                    <li>Kubernetes</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Cloud</h3>
-                <ul>
-                    <li>AWS</li>
-                    <li>Azure</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Scripting</h3>
-                <ul>
-                    <li>Bash</li>
-                    <li>Python</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Pipeline</h3>
-                <ul>
-                    <li>Jenkins</li>
-                    <li>GitHub Actions</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Security</h3>
-                <ul>
-                    <li>OWASP</li>
-                    <li>SonarQube</li>
-                </ul>
-            </div>
-        </aside>
+                
+                <div class="sidebar-section">
+                    <h3>Cloud Platforms</h3>
+                    <ul>
+                        <li>AWS (Certified)</li>
+                        <li>Azure</li>
+                        <li>Google Cloud</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>CI/CD & DevOps</h3>
+                    <ul>
+                        <li>Jenkins</li>
+                        <li>GitHub Actions</li>
+                        <li>ArgoCD</li>
+                        <li>Tekton</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Security Tools</h3>
+                    <ul>
+                        <li>OWASP ZAP</li>
+                        <li>SonarQube</li>
+                        <li>Trivy</li>
+                        <li>Checkov</li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>AWS Certified</li>
+                        <li>Terraform Certified</li>
+                        <li>PMP</li>
+                        <li>Security+</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <a href="https://hits.sh/www.opsbygandal.dev/">
-                    <img alt="Visitor count" src="https://hits.sh/www.opsbygandal.dev.svg" />
-                </a>
-            </div>
-            <div class="footer-right">
-                <a href="#contact" class="contact-link">📬 Contact Me</a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="#"><i class="fas fa-rss"></i> Blog</a>
+                </div>
+                <p class="copyright">
+                    &copy; 2025 Yogesh Shankar Gandal. All rights reserved.
+                </p>
+                <div class="visitor-counter">
+                    <img src="https://hits.sh/www.opsbygandal.dev.svg" alt="Visitor Count">
+                </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Dynamic reading time calculation
+        document.addEventListener('DOMContentLoaded', function() {
+            const articles = document.querySelectorAll('.post-card');
+            
+            articles.forEach(article => {
+                const text = article.querySelector('p').textContent;
+                const words = text.trim().split(/\s+/).length;
+                const readingTime = Math.ceil(words / 200); // 200 wpm
+                
+                const readingTimeElement = article.querySelector('.post-stats span:nth-child(2)');
+                if (readingTimeElement) {
+                    readingTimeElement.innerHTML = `<i class="far fa-clock"></i> ${readingTime} min read`;
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
