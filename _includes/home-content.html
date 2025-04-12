@@ -1,131 +1,271 @@
-<section class="about-section">
-  <h2 class="section-title">👨‍💻 About Me</h2>
-  <div class="about-content">
-    <p class="intro-text">
-      Hi, I'm <strong class="highlight">Yogesh Gandal</strong>, an aspiring <strong class="highlight">DevSecOps Engineer</strong> specializing in:
+<header class="site-header">
+  <h1 class="site-title">Yogesh Gandal</h1>
+</header>
+
+<div class="main-grid">
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar-left">
+    <img src="/assets/images/profile.jpg" alt="Yogesh Gandal" class="profile-pic" />
+    <p class="sidebar-message">
+      Aspiring DevSecOps Engg<br>
+      From Academia to Securing Infra & Pipelines
     </p>
-    <div class="tech-logos">
-      <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="40">
-      <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="40" style="margin: 0 15px;">
-      <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins" width="40">
-    </div>
-    <ul class="qualifications-list">
-      <li class="qualification-item"><span class="emoji-icon">🎓</span> BE + ME in Mechanical Engineering</li>
-      <li class="qualification-item"><span class="emoji-icon">🧑‍🏫</span> 10 years as Assistant Professor in India</li>
-      <li class="qualification-item"><span class="emoji-icon">🎓</span> MBA in International Management (Germany)</li>
-      <li class="qualification-item"><span class="emoji-icon">🛠️</span> Focused on CI/CD, Terraform, Jenkins, AWS, and secure pipelines</li>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <section class="about-section">
+      <h2 class="section-title">👨‍💻 About Me</h2>
+      <div class="about-content">
+        <p class="intro-text">
+          Hi, I'm <strong class="highlight">Yogesh Gandal</strong>, an aspiring <strong class="highlight">DevSecOps Engineer</strong> specializing in:
+        </p>
+        <div class="tech-logos">
+          <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="40">
+          <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="40" style="margin: 0 15px;">
+          <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins" width="40">
+        </div>
+        <ul class="qualifications-list">
+          <li class="qualification-item"><span class="emoji-icon">🎓</span> BE + ME in Mechanical Engineering</li>
+          <li class="qualification-item"><span class="emoji-icon">🧑‍🏫</span> 10 years as Assistant Professor in India</li>
+          <li class="qualification-item"><span class="emoji-icon">🎓</span> MBA in International Management (Germany)</li>
+          <li class="qualification-item"><span class="emoji-icon">🛠️</span> Focused on CI/CD, Terraform, Jenkins, AWS, and secure pipelines</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="featured-posts">
+      <h2 class="section-title">🗂️ Recent Posts</h2>
+      <div class="posts-list">
+        {% for post in site.posts limit:3 %}
+          <article class="post-card">
+            <h3 class="post-title">
+              <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+            </h3>
+            <time class="post-date">{{ post.date | date: "%B %-d, %Y" }}</time>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="featured-projects">
+      <h2 class="section-title">🚀 Featured Projects</h2>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3><a href="https://github.com/gandalops/gandalops.github.io">🌐 gandalops.github.io</a></h3>
+          <div class="project-tech">
+            <img src="https://www.vectorlogo.zone/logos/jekyllrb/jekyllrb-icon.svg" alt="Jekyll" width="24">
+            <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub Pages" width="24" style="margin: 0 8px;">
+          </div>
+        </div>
+        <p>My public DevSecOps portfolio built using Jekyll and GitHub Pages.</p>
+        <a href="https://www.opsbygandal.dev/" class="project-link">🔗 View Live</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3><a href="https://github.com/devyogi7579/tf-infra-ec2">🌿 tf-infra-ec2</a></h3>
+          <div class="project-tech">
+            <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="24">
+            <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="24" style="margin: 0 8px;">
+          </div>
+        </div>
+        <p>Terraform project to provision secure EC2 infrastructure with state management.</p>
+        <a href="https://github.com/devyogi7579/tf-infra-ec2" class="project-link">🔗 GitHub Repo</a>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section class="blog-highlights">
+      <h2 class="section-title">📝 Blog Highlights</h2>
+      <div class="highlight-content">
+        <p class="highlight-item">
+          ➡️ <a href="/blog/2025-04-11-terraform-basics/" class="highlight-link">Terraform Journey: From Zero to EC2 on AWS</a>
+        </p>
+        <p class="highlight-description">I document every project and lesson learned, Epic by Epic.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="contact" class="contact-section">
+      <h2 class="section-title">📬 Contact Me</h2>
+      <form action="https://formspree.io/f/mnnplklg" method="POST" class="contact-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" name="name" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" name="email" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea name="message" rows="5" class="form-textarea" required></textarea>
+        </div>
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar-right">
+    <h2 class="tools-title">🛠️ Tools I Worked With</h2>
+    <ul class="tools-list">
+      <li><strong>Infra:</strong> Terraform</li>
+      <li><strong>Cloud:</strong> AWS</li>
+      <li><strong>Scripting:</strong> Bash, Python</li>
+      <li><strong>Pipeline:</strong> Jenkins</li>
     </ul>
-  </div>
-</section>
+  </aside>
+</div>
 
-<div class="section-divider"></div>
-
-<section class="featured-posts">
-  <h2 class="section-title">🗂️ Recent Posts</h2>
-  <div class="posts-list">
-    {% for post in site.posts limit:3 %}
-      <article class="post-card">
-        <h3 class="post-title">
-          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-        </h3>
-        <time class="post-date">{{ post.date | date: "%B %-d, %Y" }}</time>
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section class="featured-projects">
-  <h2 class="section-title">🚀 Featured Projects</h2>
-
-  <div class="project-card">
-    <div class="project-header">
-      <h3><a href="https://github.com/gandalops/gandalops.github.io">🌐 gandalops.github.io</a></h3>
-      <div class="project-tech">
-        <img src="https://www.vectorlogo.zone/logos/jekyllrb/jekyllrb-icon.svg" alt="Jekyll" width="24">
-        <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub Pages" width="24" style="margin: 0 8px;">
-      </div>
-    </div>
-    <p>My public DevSecOps portfolio built using Jekyll and GitHub Pages.</p>
-    <a href="https://www.opsbygandal.dev/" class="project-link">🔗 View Live</a>
-  </div>
-
-  <div class="project-card">
-    <div class="project-header">
-      <h3><a href="https://github.com/devyogi7579/tf-infra-ec2">🌿 tf-infra-ec2</a></h3>
-      <div class="project-tech">
-        <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" width="24">
-        <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" width="24" style="margin: 0 8px;">
-      </div>
-    </div>
-    <p>Terraform project to provision secure EC2 infrastructure with state management.</p>
-    <a href="https://github.com/devyogi7579/tf-infra-ec2" class="project-link">🔗 GitHub Repo</a>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<section class="blog-highlights">
-  <h2 class="section-title">📝 Blog Highlights</h2>
-  <div class="highlight-content">
-    <p class="highlight-item">
-      ➡️ <a href="/blog/2025-04-11-terraform-basics/" class="highlight-link">Terraform Journey: From Zero to EC2 on AWS</a>
-    </p>
-    <p class="highlight-description">I document every project and lesson learned, Epic by Epic.</p>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- RESTORED CONTACT FORM -->
-<section class="contact-section">
-  <h2 class="section-title">📬 Contact Me</h2>
-  <form action="https://formspree.io/f/mnnplklg" method="POST" class="contact-form">
-    <div class="form-group">
-      <label for="name" class="form-label">Name</label>
-      <input type="text" name="name" class="form-input" required>
-    </div>
-    <div class="form-group">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" name="email" class="form-input" required>
-    </div>
-    <div class="form-group">
-      <label for="message" class="form-label">Message</label>
-      <textarea name="message" rows="5" class="form-textarea" required></textarea>
-    </div>
-    <button type="submit" class="submit-button">Send Message</button>
-  </form>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- RESTORED VISITOR COUNTER -->
-<section class="visitor-section">
-  <h2 class="section-title">📊 Visitors</h2>
-  <p>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-left">
     <a href="https://hits.sh/www.opsbygandal.dev/">
       <img alt="Visitor count" src="https://hits.sh/www.opsbygandal.dev.svg" />
     </a>
-  </p>
-</section>
+  </div>
+  <div class="footer-right">
+    <a href="#contact" class="contact-link">📬 Contact Me</a>
+  </div>
+</footer>
 
 <style>
-  /* All previous CSS from earlier version PLUS: */
-  
-  /* Contact Form Restyling */
+  /* GRID LAYOUT */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .site-header {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 1rem;
+  }
+
+  .site-title {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  /* SIDEBARS */
+  .sidebar-left {
+    text-align: center;
+  }
+
+  .profile-pic {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-message {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-style: italic;
+  }
+
+  .sidebar-right {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .tools-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tools-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tools-list li {
+    margin: 0.3rem 0;
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight {
+    color: #3c3c3c;
+    font-weight: bold;
+  }
+
+  .tech-logos img {
+    vertical-align: middle;
+  }
+
+  .qualifications-list {
+    padding-left: 1rem;
+  }
+
+  .qualification-item {
+    margin: 0.3rem 0;
+  }
+
+  .post-card {
+    margin-bottom: 1rem;
+  }
+
+  .project-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .contact-form {
     max-width: 600px;
     margin: 0 auto;
   }
-  
-  /* Visitor Counter */
-  .visitor-section {
-    text-align: center;
-    padding: 1rem 0;
+
+  .section-divider {
+    margin: 2rem 0;
+    border-top: 1px dashed #ddd;
   }
-  
-  .visitor-section img {
-    height: 30px;
+
+  /* FOOTER */
+  .site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaeaea;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .footer-left,
+  .footer-right {
+    font-size: 0.9rem;
+  }
+
+  .footer-right .contact-link {
+    text-decoration: none;
+    color: #333;
   }
 </style>
