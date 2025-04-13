@@ -27,12 +27,12 @@ jobs:
           ruby-version: 3.2.3
           bundler-cache: true
 
-      - name: Build with Jekyll
+      - name: Install Dependencies and Build
         run: |
           bundle install
           bundle exec jekyll build --trace
 
-      - name: Upload artifact
+      - name: Upload site artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./_site
