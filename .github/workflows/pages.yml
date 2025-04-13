@@ -4,17 +4,22 @@ on:
   push:
     branches:
       - main
-  
+  workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  github-pages:
+  build-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -22,16 +27,16 @@ jobs:
           ruby-version: 3.2.3
           bundler-cache: true
 
-      - name: Build site with Jekyll
-        run: bundle exec jekyll build
+      - name: Build with Jekyll
+        run: |
+          bundle install
+          bundle exec jekyll build --trace
 
-      - name: Debug List _site contents
-        run: ls -la _site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./_site
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-          publish_branch: gh-pages
-          force_orphan: true
+        id: deployment
+        uses: actions/deploy-pages@v2

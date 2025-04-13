@@ -3,10 +3,10 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-Gemfile.lock
-vendor/
 
 # Ruby bundler
+Gemfile.lock
+vendor/
 .bundle/
 *.gem
 
@@ -16,4 +16,11 @@ vendor/
 
 # Logs
 *.log
-_site/
+
+# Node/npm
+node_modules/
+package-lock.json
+
+# Environment files
+.env
+.env.local
