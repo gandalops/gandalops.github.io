@@ -19,17 +19,13 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2.3'
+          ruby-version: '3.1'
           bundler-cache: true
           
-      - name: Install dependencies
-        run: bundle install
-
       - name: Build with Jekyll
-        run: bundle exec jekyll build --trace
-
-      - name: List built files
-        run: ls -R _site
+        run: |
+          bundle config set force_ruby_platform true
+          bundle exec jekyll build --trace
 
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -39,10 +35,9 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/deploy-pages@v4
-        id: deployment
+        id: deployment  # <-- Added ID
         with:
-          path: ./_site  # Critical fix
+          path: ./_site
