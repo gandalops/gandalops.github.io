@@ -1,7 +1,7 @@
 source "https://rubygems.org"
-
+ruby "~> 3.2.0" 
 # Core Jekyll + GitHub Pages
-gem "github-pages", "~> 232", group: :jekyll_plugins
+gem "github-pages", group: :jekyll_plugins
 
 # Additional required gems to resolve warnings/errors
 gem "faraday-retry"                      # Resolves the Faraday v2.0+ warning
