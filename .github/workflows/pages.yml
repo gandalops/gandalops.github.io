@@ -28,6 +28,9 @@ jobs:
       - name: Build with Jekyll
         run: bundle exec jekyll build --trace
 
+      - name: List built files
+        run: ls -R _site
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
@@ -41,3 +44,5 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment
+        with:
+          path: ./_site  # Critical fix

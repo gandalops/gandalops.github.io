@@ -28,7 +28,6 @@ exclude:
   - vendor/
   - .github/
   - "*.sh"
-  - "*.md"
   - "*.txt"
 
 # Author Profile
