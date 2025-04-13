@@ -4,31 +4,33 @@ email: contact@opsbygandal.dev
 description: >-
   DevSecOps portfolio showcasing secure infrastructure automation, CI/CD pipelines, 
   and cloud security solutions by Yogesh Shankar Gandal.
-baseurl: ""
 url: "https://gandalops.github.io"
+baseurl: ""
+timezone: Europe/Berlin
 
 # Minimal Mistakes Theme
-remote_theme: "mmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "default"
 repository: "gandalops/gandalops.github.io"
 
 # Plugins (order matters)
 plugins:
+  - jekyll-github-metadata
   - jekyll-remote-theme
-  - jekyll-include-cache
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+
+# GitHub Metadata
+github: [metadata]
 
 # Exclusions
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor/
+  - .github/
   - "*.sh"
   - "*.md"
   - "*.txt"
@@ -100,9 +102,15 @@ home:
     recent_limit: 0
     show_sidebar_ad: false
 
-# Pagination
-paginate: false
-show_excerpts: false
+# Pagination Configuration
+pagination:
+  enabled: false
+  per_page: 8
+  permalink: '/page:num/'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
 
 # Blog Permalinks
 collections:
@@ -118,12 +126,25 @@ sitemap:
 # Security Headers (for DevSecOps best practices)
 security_headers:
   enabled: true
-  csp: "default-src 'self'; script-src 'self' 'unsafe-inline' https://hits.sh; img-src 'self' https: data:"
+  csp: |
+    default-src 'self';
+    script-src 'self' https://utteranc.es https://hits.sh;
+    style-src 'self' 'unsafe-inline' https://utteranc.es;
+    img-src 'self' https: data:;
+    font-src 'self' https://utteranc.es;
+    connect-src 'self' https://utteranc.es https://api.utteranc.es;
+    frame-src https://utteranc.es
+  additional_headers:
+    X-XSS-Protection: "1; mode=block"
+    X-Content-Type-Options: "nosniff"
+    Referrer-Policy: "strict-origin-when-cross-origin"
 
 # GitHub Pages specific
 github:
   source:
+    branch: main
     exclude:
+      - ".github/"
       - "*.sh"
       - "*.md"
       - "*.txt"
