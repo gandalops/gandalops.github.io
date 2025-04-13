@@ -1,26 +1,28 @@
-# Jekyll & GitHub Pages ignore rules
+# Jekyll & GitHub Pages
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 
 # Ruby bundler
-Gemfile.lock
 vendor/
 .bundle/
 *.gem
+*.rbc
 
-# Editor/IDE
+# Development
 .vscode/
 .idea/
-
-# Logs
 *.log
 
 # Node/npm
 node_modules/
 package-lock.json
 
-# Environment files
-.env
-.env.local
+# Environment
+.env*
+!.env.example
+
+# System files
+.DS_Store
+Thumbs.db

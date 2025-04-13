@@ -1,15 +1,17 @@
 source "https://rubygems.org"
-ruby "~> 3.2.0" 
-# Core Jekyll + GitHub Pages
-gem "github-pages", group: :jekyll_plugins
+ruby "~> 3.2.0"
 
-# Additional required gems to resolve warnings/errors
-gem "faraday-retry"                      # Resolves the Faraday v2.0+ warning
-gem "webrick", "~> 1.7"                  # Often needed for local Jekyll serving
-gem "jekyll-remote-theme"                # Explicitly include if using mmistakes theme
+# Core Jekyll with version pinning
+gem "jekyll", "~> 4.3.0"  # Modern stable version
+gem "jekyll-remote-theme"  # Required for Minimal Mistakes
 
+# Essential plugins
 group :jekyll_plugins do
-  gem "jekyll-feed"                      # For RSS feed
-  gem "jekyll-seo-tag"                   # For better SEO
-  gem "jekyll-sitemap"                   # For sitemap generation
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
 end
+
+# Development dependencies
+gem "webrick"  # Required for Jekyll 4.0+ local serving
+gem "faraday-retry", "~> 2.0"  # Resolve Faraday warnings
