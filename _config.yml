@@ -15,14 +15,10 @@ repository: "gandalops/gandalops.github.io"
 
 # Plugins (order matters)
 plugins:
-  - jekyll-github-metadata
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-
-# GitHub Metadata
-github: [metadata]
 
 # Exclusions
 exclude:
