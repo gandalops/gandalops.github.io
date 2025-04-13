@@ -103,7 +103,7 @@
                 </section>
 
                 <section class="featured-posts">
-                    <h2 class="section-title"><i class="fas fa-newspaper"></i> Latest Articles</h2>
+                    <h2 class="section-title"><i class="fas fa-lightbulb"></i> My Recent Learning</h2>
                     
                     <article class="post-card">
                         <h3>
@@ -120,34 +120,6 @@
                                 <span class="view-counter"><i class="far fa-eye"></i> <span class="view-count">Loading...</span></span>
                                 <span><i class="far fa-clock"></i> 5 min read</span>
                                 <span><i class="far fa-comments"></i> 14 comments</span>
-                            </div>
-                        </div>
-                        <div class="comment-section">
-                            <h4><i class="far fa-comment-dots"></i> Join the Discussion</h4>
-                            <form class="comment-form">
-                                <input type="text" class="comment-input" placeholder="Share your thoughts..." aria-label="Comment input">
-                                <button type="submit" class="submit-button">
-                                    <i class="fas fa-paper-plane"></i> Post
-                                </button>
-                            </form>
-                        </div>
-                    </article>
-                    
-                    <article class="post-card">
-                        <h3>
-                            <a href="/blog/2025-03-28-jenkins-pipelines/" class="post-link">
-                                Building Secure Jenkins Pipelines: From Basic to Blue Ocean
-                            </a>
-                        </h3>
-                        <p>
-                            How I implemented security best practices in Jenkins CI/CD pipelines, including credential management, pipeline libraries, and integrating security scanning tools.
-                        </p>
-                        <div class="post-meta">
-                            <span><i class="far fa-calendar-alt"></i> March 28, 2025</span>
-                            <div class="post-stats">
-                                <span class="view-counter"><i class="far fa-eye"></i> <span class="view-count">Loading...</span></span>
-                                <span><i class="far fa-clock"></i> 7 min read</span>
-                                <span><i class="far fa-comments"></i> 8 comments</span>
                             </div>
                         </div>
                     </article>
@@ -298,20 +270,16 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Function to fetch view counts (replace with your actual API endpoint)
             function fetchViewCounts() {
-                // Example: Replace with your actual API call
                 const articles = document.querySelectorAll('.view-counter');
                 
                 articles.forEach((counter, index) => {
-                    // Simulate API call with timeout
                     setTimeout(() => {
-                        // Replace this with actual fetch to your view counter API
-                        const views = Math.floor(Math.random() * 1000) + 500; // Random number for demo
+                        const views = Math.floor(Math.random() * 1000) + 500;
                         counter.querySelector('.view-count').textContent = views.toLocaleString();
                     }, index * 300);
                 });
             }
             
-            // Call the function when page loads
             fetchViewCounts();
             
             // Dynamic reading time calculation
@@ -320,7 +288,7 @@
             articles.forEach(article => {
                 const text = article.querySelector('p').textContent;
                 const words = text.trim().split(/\s+/).length;
-                const readingTime = Math.ceil(words / 200); // 200 wpm
+                const readingTime = Math.ceil(words / 200);
                 
                 const readingTimeElement = article.querySelector('.post-stats span:nth-child(2)');
                 if (readingTimeElement) {

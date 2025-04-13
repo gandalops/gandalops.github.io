@@ -85,7 +85,7 @@ img {
     margin-bottom: 2rem;
 }
 
-/* Left Sidebar */
+/* Left Sidebar - Profile Section */
 .sidebar-left {
     flex: 1;
     background-color: #e8f4f8;
@@ -97,7 +97,7 @@ img {
     height: min-content;
 }
 
-/* Main Content */
+/* Main Content - 3x width of sidebars */
 .main-content {
     flex: 3;
     background-color: #ffffff;
@@ -106,7 +106,7 @@ img {
     box-shadow: var(--shadow);
 }
 
-/* Right Sidebar */
+/* Right Sidebar - Technical Toolkit */
 .sidebar-right {
     flex: 1;
     background-color: #f0f8f0;
@@ -127,6 +127,13 @@ img {
     margin: 0 auto 1.5rem;
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.sidebar-message {
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
 }
 
 .sidebar-section {
@@ -237,6 +244,7 @@ img {
 
 .qualifications-list {
     margin: 1.8rem 0;
+    list-style: none;
 }
 
 .qualification-item {
@@ -252,7 +260,66 @@ img {
     color: var(--secondary);
 }
 
-/* ====== Project Cards ====== */
+/* ====== My Recent Learning Section ====== */
+.featured-posts {
+    margin: 2rem 0;
+}
+
+.post-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+.post-link {
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.post-link:hover {
+    color: var(--secondary);
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
+.post-stats {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.post-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.view-counter .view-count {
+    font-weight: 600;
+}
+
+/* ====== Featured Projects ====== */
+.featured-projects {
+    margin: 2rem 0;
+}
+
 .project-card {
     background: white;
     border-radius: var(--radius);
@@ -306,74 +373,11 @@ img {
     margin-top: 1rem;
 }
 
-/* ====== Blog Post Cards ====== */
-.post-card {
-    background: white;
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: var(--transition);
-}
-
-.post-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-.post-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: var(--gray);
-}
-
-.post-stats {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.post-stats span {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.view-counter .view-count {
-    font-weight: 600;
-}
-
-.comment-section {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.comment-form {
-    margin-top: 1rem;
-    display: flex;
-    gap: 0.5rem;
-}
-
-.comment-input {
-    flex: 1;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: var(--radius);
-    font-family: inherit;
-    transition: var(--transition);
-}
-
-.comment-input:focus {
-    outline: none;
-    border-color: var(--secondary);
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-}
-
 /* ====== Contact Form ====== */
+.contact-section {
+    margin: 2rem 0;
+}
+
 .contact-form {
     margin-top: 1.5rem;
 }
@@ -499,25 +503,26 @@ img {
     .site-title {
         font-size: 2rem;
     }
-}
-
-@media (max-width: 480px) {
+    
     .project-header, .post-meta {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
     }
-    
+}
+
+@media (max-width: 480px) {
     .tech-stack {
         justify-content: center;
     }
     
-    .comment-form {
-        flex-direction: column;
-    }
-    
     .post-stats {
         flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
         gap: 0.5rem;
     }
 }

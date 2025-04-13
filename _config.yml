@@ -2,7 +2,8 @@
 title: "Yogesh Gandal DevSecOps Portfolio"
 email: contact@opsbygandal.dev
 description: >-
-  My DevSecOps journey, projects, and blog.
+  DevSecOps portfolio showcasing secure infrastructure automation, CI/CD pipelines, 
+  and cloud security solutions by Yogesh Shankar Gandal.
 baseurl: ""
 url: "https://gandalops.github.io"
 
@@ -28,6 +29,9 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - "*.sh"
+  - "*.md"
+  - "*.txt"
 
 # Author Profile
 author:
@@ -62,6 +66,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
+      show_featured: false
 
 # Markdown Processor
 markdown: kramdown
@@ -76,7 +81,7 @@ nav:
     url: /
   - title: "Projects"
     url: /projects/
-  - title: "Blog"
+  - title: "My Learnings"
     url: /blog/
 
 # Comments
@@ -92,10 +97,10 @@ home:
   layout: home
   sidebar:
     show_recent: false
-    recent_limit: 3
+    recent_limit: 0
     show_sidebar_ad: false
 
-# Pagination Fix
+# Pagination
 paginate: false
 show_excerpts: false
 
@@ -105,3 +110,20 @@ collections:
     output: true
     permalink: /blog/:year-:month-:day-:title/
 
+# Sitemap Configuration
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+
+# Security Headers (for DevSecOps best practices)
+security_headers:
+  enabled: true
+  csp: "default-src 'self'; script-src 'self' 'unsafe-inline' https://hits.sh; img-src 'self' https: data:"
+
+# GitHub Pages specific
+github:
+  source:
+    exclude:
+      - "*.sh"
+      - "*.md"
+      - "*.txt"

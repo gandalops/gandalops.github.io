@@ -1,5 +1,5 @@
 <div class="featured-posts">
-  <h2 class="section-title">🗂️ Recent Blog Posts</h2>
+  <h2 class="section-title">📚 My Recent Learning</h2>
 
   {% if site.posts.size > 0 %}
     <ul class="featured-posts-list">
@@ -8,36 +8,72 @@
           <h3 class="post-title">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           </h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
           <div class="post-meta">
-            <span>📅 {{ post.date | date: "%b %-d, %Y" }}</span>
-            <span>
+            <span class="post-date">📅 {{ post.date | date: "%b %-d, %Y" }}</span>
+            <span class="post-views">
               👁️ 
               <img 
-                src="https://hits.sh/www.opsbygandal.dev{{ post.url }}.svg?style=flat-square" 
+                src="https://hits.sh/www.opsbygandal.dev{{ post.url }}.svg?style=flat-square&label=views" 
                 alt="Views for {{ post.title }}" 
+                loading="lazy"
               />
             </span>
-            <span class="read-time">⏱️</span>
+            <span class="read-time">⏱️ {% include reading-time.html content=post.content %}</span>
           </div>
         </li>
       {% endfor %}
     </ul>
   {% else %}
-    <p>No posts yet. Check back soon!</p>
+    <p>No learning resources yet. Check back soon!</p>
   {% endif %}
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const posts = document.querySelectorAll(".post-card");
-    posts.forEach(post => {
-      const text = post.innerText || "";
-      const wordCount = text.split(/\s+/).length;
-      const estimatedReadingTime = Math.ceil(wordCount / 200); // Avg. 200 wpm
-      const readTimeSpan = post.querySelector(".read-time");
-      if (readTimeSpan) {
-        readTimeSpan.textContent = `${estimatedReadingTime} min read`;
-      }
-    });
-  });
-</script>
+<style>
+  .featured-posts {
+    margin: 2rem 0;
+  }
+  
+  .featured-posts-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .post-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  }
+  
+  .post-title {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+  
+  .post-excerpt {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .post-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+    align-items: center;
+  }
+  
+  .post-meta img {
+    height: 18px;
+    vertical-align: middle;
+  }
+</style>
