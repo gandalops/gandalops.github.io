@@ -1,26 +1,27 @@
-# Site Configuration
+# Site Settings
 title: "Yogesh Gandal DevSecOps Portfolio"
 email: contact@opsbygandal.dev
 description: >-
-  DevSecOps portfolio showcasing secure infrastructure automation, CI/CD pipelines, 
+  DevSecOps portfolio showcasing secure infrastructure automation, CI/CD pipelines,
   and cloud security solutions by Yogesh Shankar Gandal.
 url: "https://gandalops.github.io"
-baseurl: ""
+baseurl: "" # For GitHub Pages project sites, set to "/repository-name"
 timezone: Europe/Berlin
 
-# Minimal Mistakes Theme
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+# Theme Configuration
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
 minimal_mistakes_skin: "default"
 repository: "gandalops/gandalops.github.io"
 
-# Plugins (order matters)
+# Plugins
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-include-cache
 
-# Exclusions
+# Exclude from Processing
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -30,7 +31,12 @@ exclude:
   - "*.sh"
   - "*.txt"
 
-# Author Profile
+# Include Additional Files
+include:
+  - _includes/home-content.html
+  - _includes/head/custom.html
+
+# Author Information
 author:
   name: "Yogesh Shankar Gandal"
   avatar: "/assets/images/avatar.png"
@@ -41,12 +47,7 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:contact@opsbygandal.dev"
 
-# Directory Includes
-include:
-  - _includes/home-content.html
-  - _includes/head/custom.html
-
-# Default Front Matter
+# Defaults
 defaults:
   - scope:
       path: "_pages"
@@ -64,8 +65,9 @@ defaults:
       author_profile: true
       read_time: true
       show_featured: false
+      comments: true
 
-# Markdown Processor
+# Markdown and Syntax Highlighting
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -97,44 +99,19 @@ home:
     recent_limit: 0
     show_sidebar_ad: false
 
-# Pagination Configuration
-pagination:
-  enabled: false
-  per_page: 8
-  permalink: '/page:num/'
-  title: ':title - page :num'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
+# Pagination
+paginate: 8
+paginate_path: "/page:num/"
 
-# Blog Permalinks
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year-:month-:day-:title/
+# Permalinks
+permalink: /blog/:year-:month-:day-:title/
 
-# Sitemap Configuration
+# Sitemap Settings
 sitemap:
   changefreq: weekly
   priority: 0.5
 
-# Security Headers (for DevSecOps best practices)
-security_headers:
-  enabled: true
-  csp: |
-    default-src 'self';
-    script-src 'self' https://utteranc.es https://hits.sh;
-    style-src 'self' 'unsafe-inline' https://utteranc.es;
-    img-src 'self' https: data:;
-    font-src 'self' https://utteranc.es;
-    connect-src 'self' https://utteranc.es https://api.utteranc.es;
-    frame-src https://utteranc.es
-  additional_headers:
-    X-XSS-Protection: "1; mode=block"
-    X-Content-Type-Options: "nosniff"
-    Referrer-Policy: "strict-origin-when-cross-origin"
-
-# GitHub Pages specific
+# GitHub Pages Settings
 github:
   source:
     branch: main

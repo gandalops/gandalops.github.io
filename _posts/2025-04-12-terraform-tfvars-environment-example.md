@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Understanding `.tfvars` in Terraform with Real EC2 Example"
 date: 2025-04-12
 tags: [Terraform, DevSecOps, AWS, Best Practices]
