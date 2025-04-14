@@ -1,11 +1,16 @@
 ---
+layout: single
 title: "How I Brought My Broken DevSecOps Blog Back to Life – A Jekyll, Ruby & GitHub Pages Debugging Journey"
 date: 2025-04-14
+last_modified_at: 2025-04-15
 categories: [Jekyll, GitHub Pages, Ruby, Debugging]
 tags: [jekyll, ruby, github-pages, minimal-mistakes, blog, errors]
-layout: single
 author_profile: true
 read_time: true
+toc: true
+toc_sticky: true
+toc_label: "Article Contents"
+featured: true
 ---
 
 Building my DevSecOps portfolio site was a moment of excitement — until it broke. 😅 What started as a clean Jekyll + GitHub Pages setup turned into a deep dive into Ruby versions, unsupported plugins, CI/CD failures, and more. Here’s how I fixed it all, and what I learned in the process.
@@ -26,7 +31,7 @@ Building my DevSecOps portfolio site was a moment of excitement — until it bro
 ## 🔥 1. Error: `Unknown tag 'include_cached'`
 
 ### What Happened:
-Jekyll build failed with a Liquid syntax error because the theme was using `{% include_cached %}`.
+Jekyll build failed with a Liquid syntax error because the theme was using the {% raw %}{% include_cached %}{% endraw %} tag.
 
 ### Root Cause:
 `jekyll-include-cache` is **not supported** by GitHub Pages. The newer Minimal Mistakes versions depend on it.
@@ -34,6 +39,17 @@ Jekyll build failed with a Liquid syntax error because the theme was using `{% i
 ### Fix:
 - Downgraded `minimal-mistakes-jekyll` to version `4.22.0`
 - Removed `jekyll-include-cache` from `Gemfile` and `_config.yml`
+
+### Preserving the Example:
+To keep a reference to the original tag without breaking the build again, I used a raw code block:
+
+````liquid
+{% raw %}
+{% include_cached somefile.html %}
+{% endraw %}
+````
+
+This allows me to document the issue without letting Jekyll try to execute the unsupported tag.
 
 ---
 
@@ -157,3 +173,11 @@ echo "Ready to rebuild: bundle install && bundle exec jekyll serve"
 
 If you're debugging your Jekyll site today — trust me, you're not alone. The key is to read the logs, understand your environment, and align everything from Ruby to themes. And yes, don’t forget to commit `Gemfile.lock` 😉
 
+---
+
+💬 **Let's Connect**  
+If you have also solved similar issue, I am happy to listen your story or if you have some feedback for me then let’s connect.  
+[Open an issue](https://github.com/gandalops/gandalops.github.io/issues) on this blog's repo or  
+[Connect on LinkedIn](https://linkedin.com/in/yourprofile)
+
+---
