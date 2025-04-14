@@ -141,5 +141,4 @@ github:
     exclude:
       - ".github/"
       - "*.sh"
-      - "*.md"
       - "*.txt"

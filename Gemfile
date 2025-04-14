@@ -5,7 +5,7 @@ ruby "~> 3.1.0"
 
 # Core Jekyll with version pinning
 gem "jekyll", "~> 4.3.3"
-gem "minimal-mistakes-jekyll", "~> 4.24.0"
+gem "minimal-mistakes-jekyll", "~> 4.24.0", require: false  # Prevents auto-loading plugins
 gem "jekyll-remote-theme", "~> 0.4.3"
 
 # Essential plugins with version locking
