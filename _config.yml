@@ -10,7 +10,7 @@ timezone: Europe/Berlin
 
 # Theme Configuration
 remote_theme: "mmistakes/minimal-mistakes@4.26.2"
-minimal_mistakes_skin: "default"
+minimal_mistakes_skin: "default"  # Light mode by default
 repository: "gandalops/gandalops.github.io"
 
 # Plugins
@@ -43,9 +43,12 @@ author:
   bio: "DevSecOps explorer. From Academia to securing Infra & pipelines."
   location: "Germany"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:contact@opsbygandal.dev"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/gandalops"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://linkedin.com/in/yogeshgandal"
 
 # Defaults
 defaults:
@@ -119,3 +122,10 @@ github:
       - ".github/"
       - "*.sh"
       - "*.txt"
+
+# Google Analytics (GA4)
+analytics:
+  provider: "google"
+  google:
+    tracking_id: "G-RNKJP27JVX"
+    anonymize_ip: true
