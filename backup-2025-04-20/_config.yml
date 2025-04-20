@@ -1,0 +1,121 @@
+# Site Settings
+title: "Yogesh Gandal DevSecOps Portfolio"
+email: contact@opsbygandal.dev
+description: >-
+  DevSecOps portfolio showcasing secure infrastructure automation, CI/CD pipelines,
+  and cloud security solutions by Yogesh Shankar Gandal.
+url: "https://gandalops.github.io"
+baseurl: "" # For GitHub Pages project sites, set to "/repository-name"
+timezone: Europe/Berlin
+
+# Theme Configuration
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: "default"
+repository: "gandalops/gandalops.github.io"
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-include-cache
+
+# Exclude from Processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .github/
+  - "*.sh"
+  - "*.txt"
+
+# Include Additional Files
+include:
+  - _includes/home-content.html
+  - _includes/head/custom.html
+
+# Author Information
+author:
+  name: "Yogesh Shankar Gandal"
+  avatar: "/assets/images/avatar.png"
+  bio: "DevSecOps explorer. From Academia to securing Infra & pipelines."
+  location: "Germany"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:contact@opsbygandal.dev"
+
+# Defaults
+defaults:
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      sidebar:
+        nav: "main"
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      show_featured: false
+      comments: true
+
+# Markdown and Syntax Highlighting
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Navigation
+nav:
+  - title: "Home"
+    url: /
+  - title: "Projects"
+    url: /projects/
+  - title: "My Learnings"
+    url: /blog/
+
+# Comments
+comments:
+  provider: "utterances"
+  utterances:
+    repo: "gandalops/gandalops.github.io"
+    issue_term: "pathname"
+    theme: "github-light"
+
+# Homepage Customization
+home:
+  layout: home
+  sidebar:
+    show_recent: false
+    recent_limit: 0
+    show_sidebar_ad: false
+
+# Pagination
+paginate: 8
+paginate_path: "/page:num/"
+
+# Permalinks
+permalink: /blog/:year-:month-:day-:title/
+
+# Sitemap Settings
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+
+# GitHub Pages Settings
+github:
+  source:
+    branch: main
+    exclude:
+      - ".github/"
+      - "*.sh"
+      - "*.txt"
