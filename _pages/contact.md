@@ -1,21 +1,14 @@
 ---
-layout: single
-title: "Contact Me"
+layout: page
+title: "Contact"
 permalink: /contact/
-author_profile: true
 ---
 
-If you’d like to get in touch — feel free to use the form below. I’ll get back to you as soon as possible.
+## 📬 Reach Out
 
-<form action="https://formspree.io/f/mnnplklg" method="POST">
-  <label for="name">Name</label><br>
-  <input type="text" name="name" required><br><br>
+You can reach me directly using the contact form on the [homepage](/#contact).
 
-  <label for="email">Email</label><br>
-  <input type="email" name="email" required><br><br>
+Or email me directly at:  
+📧 **your.email@example.com**
 
-  <label for="message">Message</label><br>
-  <textarea name="message" rows="5" required></textarea><br><br>
-
-  <button type="submit">Send</button>
-</form>
+Let’s build something awesome together 🚀
