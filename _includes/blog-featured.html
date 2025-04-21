@@ -13,11 +13,6 @@
       <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
       <div class="post-meta">
         <span class="post-date">📅 {{ post.date | date: "%b %-d, %Y" }}</span>
-        <span class="post-views">
-          👁️
-          <img src="https://hits.sh/www.opsbygandal.dev{{ post.url }}.svg?style=flat-square&label=views"
-            alt="Views for {{ post.title }}" loading="lazy" />
-        </span>
         <span class="read-time">
           ⏱️ {% include reading-time.html content=post.content %}
         </span>

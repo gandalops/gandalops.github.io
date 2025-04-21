@@ -1,7 +1,7 @@
 <main class="main-content">
 
     <!-- About Me -->
-    <section class="about-section">
+    <section id="about" class="about-section">
       <h2 class="section-title"><i class="fas fa-user-tie"></i> About Me</h2>
       <div class="about-content">
         <p class="intro-text">
@@ -30,9 +30,13 @@
     </section>
     
     <!-- Tech Stack Card -->
-    <section class="tech-stack-section">
+    <section id="techstack" class="tech-stack-section">
       <h2 class="section-title"><i class="fas fa-tools"></i> My Tech Stack</h2>
       <div class="tech-stack-content">
+        <div class="tech-card">
+          <img src="https://www.vectorlogo.zone/logos/atlassian_jira/atlassian_jira-icon.svg" alt="Jira" title="Jira">
+          <p>Jira</p>
+        </div>
         <div class="tech-card">
           <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" title="AWS">
           <p>AWS</p>
@@ -57,7 +61,7 @@
     
   
     <!-- Featured Projects -->
-    <section class="featured-projects">
+    <section id="projects" class="featured-projects">
       <h2 class="section-title"><i class="fas fa-rocket"></i> Featured Projects</h2>
   
       <div class="project-card">
@@ -109,7 +113,7 @@
     </section>
   
     <!-- 📚 My Learning So Far -->
-    <section class="all-posts">
+    <section id="blogs" class="all-posts">
       <h2 class="section-title"><i class="fas fa-book-reader"></i> My Learning So Far</h2>
       <div class="post-list">
         {% for post in site.posts %}

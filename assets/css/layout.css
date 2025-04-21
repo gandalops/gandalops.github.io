@@ -8,15 +8,34 @@
 .site-header {
     background: linear-gradient(135deg, var(--primary), #1a2a3a);
     color: white;
-    padding: 2.5rem 0;
-    text-align: center;
+    padding: 1rem 2rem;
     margin-bottom: 2rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header-left .logo-placeholder {
+    font-size: 1.8rem;
+}
+
+.header-center {
+    text-align: center;
+    flex: 1;
 }
 
 .site-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin: 0;
     background: linear-gradient(to right, #fff, #ddd);
     -webkit-background-clip: text;
     background-clip: text;
@@ -24,9 +43,21 @@
 }
 
 .site-subtitle {
-    font-size: 1.1rem;
-    opacity: 0.9;
+    font-size: 1rem;
     font-weight: 400;
+    opacity: 0.9;
+}
+
+.header-right a {
+    margin-left: 1rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-right a:hover {
+    color: var(--secondary);
 }
 
 .main-grid {

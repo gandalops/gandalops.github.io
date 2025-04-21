@@ -62,3 +62,13 @@ img {
         transform: translateY(0);
     }
 }
+/*Enable Smooth Scrolling*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fix anchor scroll offset for sticky header */
+:root {
+    scroll-padding-top: 100px;
+    /* Adjust based on your header height */
+}

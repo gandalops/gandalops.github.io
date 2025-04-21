@@ -1,23 +1,33 @@
 <footer class="site-footer">
   <div class="footer-row">
 
-    <!-- 🔗 Left: GitHub and LinkedIn Links -->
+    <!-- 🪪 Left: Copyright -->
     <div class="footer-left">
+      &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.
+    </div>
+
+<!-- ⚠️ Center: Dev Message + Hits -->
+<div class="footer-center">
+  <span class="footer-dev-message">
+    <i class="fas fa-tools"></i> This site is under active development
+  </span>
+  {% if page.url == "/" %}
+  <span class="footer-views">
+    👁️
+    <img src="https://hits.sh/www.opsbygandal.dev.svg?style=flat-square&label=visits" alt="Total Site Views"
+      loading="lazy" />
+  </span>
+  {% endif %}
+</div>
+
+
+    <!-- 🔗 Right: Social Links -->
+    <div class="footer-right">
       {% for link in site.author.links %}
       <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
         <i class="{{ link.icon }}"></i> {{ link.label }}
       </a>
       {% endfor %}
-    </div>
-
-    <!-- 🪪 Center: Copyright -->
-    <div class="footer-center">
-      &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.
-    </div>
-
-    <!-- ⚠️ Right: Dev Message -->
-    <div class="footer-right">
-      <i class="fas fa-tools"></i> This site is under active development
     </div>
 
   </div>
