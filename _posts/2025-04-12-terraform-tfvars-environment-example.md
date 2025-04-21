@@ -5,6 +5,7 @@ date: 2025-04-12
 tags: [Terraform, DevSecOps, AWS, Best Practices]
 categories: [Terraform]
 description: A practical deep dive into `.tfvars` usage in Terraform, with EC2 deployment examples and industry-aligned best practices.
+author_profile: true
 toc: true
 toc_sticky: true
 toc_label: "Article Contents"

@@ -8,33 +8,6 @@
           Hi, I'm <strong class="highlight">Yogesh Shankar Gandal</strong>, a <strong class="highlight">DevSecOps Engineer</strong> with a unique background combining mechanical engineering, academia, and international business management. I specialize in building secure, automated infrastructure and CI/CD pipelines.
         </p>
   
-        <div class="tech-stack">
-          <div class="tech-item">
-            <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python">
-            <span>Python</span>
-          </div>
-          <div class="tech-item">
-            <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS">
-            <span>AWS</span>
-          </div>
-          <div class="tech-item">
-            <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform">
-            <span>Terraform</span>
-          </div>
-          <div class="tech-item">
-            <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker">
-            <span>Docker</span>
-          </div>
-          <div class="tech-item">
-            <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="Jenkins">
-            <span>Jenkins</span>
-          </div>
-          <div class="tech-item">
-            <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes">
-            <span>Kubernetes</span>
-          </div>
-        </div>
-  
         <ul class="qualifications-list">
           <li class="qualification-item">
             <span class="emoji-icon"><i class="fas fa-graduation-cap"></i></span>
@@ -55,11 +28,33 @@
         </ul>
       </div>
     </section>
-  
-    <!-- Blog Highlights -->
-    <section class="featured-posts">
-      {% include blog-featured.html %}
+    
+    <!-- Tech Stack Card -->
+    <section class="tech-stack-section">
+      <h2 class="section-title"><i class="fas fa-tools"></i> My Tech Stack</h2>
+      <div class="tech-stack-content">
+        <div class="tech-card">
+          <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="AWS" title="AWS">
+          <p>AWS</p>
+        </div>
+        <div class="tech-card">
+          <img src="https://www.vectorlogo.zone/logos/terraformio/terraformio-icon.svg" alt="Terraform" title="Terraform">
+          <p>Terraform</p>
+        </div>
+        <div class="tech-card">
+          <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" title="Docker">
+          <p>Docker</p>
+        </div>
+        <div class="tech-card">
+          <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes" title="Kubernetes">
+          <p>Kubernetes</p>
+        </div>
+      </div>
     </section>
+
+    <!-- Blog Highlights -->
+        {% include blog-featured.html %}
+    
   
     <!-- Featured Projects -->
     <section class="featured-projects">
@@ -113,6 +108,24 @@
       </div>
     </section>
   
+    <!-- 📚 My Learning So Far -->
+    <section class="all-posts">
+      <h2 class="section-title"><i class="fas fa-book-reader"></i> My Learning So Far</h2>
+      <div class="post-list">
+        {% for post in site.posts %}
+        <div class="post-card">
+          <h3><a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a></h3>
+          <p class="intro-text">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+          <div class="post-meta">
+            <span>📅 {{ post.date | date: "%b %d, %Y" }}</span>
+            <span>⏱️ {% include reading-time.html content=post.content %}</span>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
     <!-- Contact Form -->
     <section id="contact" class="contact-section">
       <h2 class="section-title"><i class="fas fa-envelope"></i> Get In Touch</h2>

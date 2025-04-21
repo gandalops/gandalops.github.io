@@ -1,0 +1,4 @@
+<nav class="toc">
+    <h2 class="toc__title">{{ page.toc_label | default: site.toc.heading | default: "Table of Contents" }}</h2>
+    {{ content | toc_only }}
+</nav>
