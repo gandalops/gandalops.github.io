@@ -14,3 +14,26 @@
       a.appendChild(r);
   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Gumshoe(".nav-links a", {
+      offset: 80, // match your sticky header height
+      reflow: true,
+      events: true,
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    toggleBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+      const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+      toggleBtn.setAttribute("aria-expanded", !expanded);
+    });
+  });
+</script>
