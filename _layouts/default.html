@@ -6,10 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }} | {{ site.title }}</title>
   {% seo %}
-  
-  <!-- Sitewide Styles -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 
+  <!-- ✅ Load Modular Main CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
   <!-- Optional: Font Awesome + Custom Head -->
   {% include head/custom.html %}
@@ -20,10 +19,16 @@
 
   <div class="container">
     <div class="main-grid">
+
+      <!-- ✅ Show Left Sidebar Only on Home Page -->
+      {%- if page.url == "/" -%}
       {% include sidebar-left.html %}
+      {%- endif -%}
+
       <main class="main-content">
         {{ content }}
       </main>
+
     </div>
   </div>
 
