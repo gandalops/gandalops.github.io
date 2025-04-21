@@ -1,0 +1,473 @@
+/* 👤 SIDEBAR LEFT STYLES */
+.sidebar-left {
+    flex: 1 1 30%;
+    background-color: #e8f4f8;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 1rem;
+    height: min-content;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--secondary);
+    margin: 0 auto 1.5rem;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.sidebar-message {
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.sidebar-section {
+    margin-bottom: 1.8rem;
+}
+
+.sidebar-section h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.sidebar-section ul {
+    list-style: none;
+}
+
+.sidebar-section li {
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.sidebar-section li:before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    color: var(--primary);
+    font-size: 1.4rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+/* 🧾 MAIN CONTENT STYLES */
+.main-content {
+    flex: 1 1 70%;
+    background-color: #ffffff;
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.section-title {
+    color: var(--primary);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title i {
+    margin-right: 0.5rem;
+    color: var(--secondary);
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--secondary);
+    border-radius: 2px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark);
+}
+
+.highlight {
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+/* 📚 BLOG & PROJECT CARDS */
+.featured-posts,
+.featured-projects {
+    margin: 2rem 0;
+}
+
+.post-card,
+.project-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post-card:hover,
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+/* 📬 CONTACT FORM */
+.contact-form {
+    margin-top: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.submit-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(41, 128, 185, 0.3);
+}
+
+/* 👣 Compact Footer Layout */
+.site-footer {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-left a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-left a:hover {
+    color: var(--secondary);
+}
+
+.footer-center {
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+.footer-right {
+    color: white;
+    font-size: 0.85rem;
+}
+
+/* Responsive Tweak */
+@media (max-width: 600px) {
+    .footer-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-center {
+        justify-content: center;
+    }
+}
+/* 📱 RESPONSIVE TWEAKS */
+@media (max-width: 1024px) {
+    .main-grid {
+        flex-wrap: wrap;
+    }
+
+    .sidebar-left,
+    .main-content {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-grid {
+        flex-direction: column;
+    }
+
+    .site-title {
+        font-size: 2rem;
+    }
+
+    .project-header,
+    .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-stack {
+        justify-content: center;
+    }
+
+    .post-stats {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+
+}
+
+/* ✅ Blog Article Page Improvements */
+.page__main {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.page__main h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+}
+
+.page__main h2,
+.page__main h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.page__main p {
+    font-size: 1.05rem;
+    margin-bottom: 1.3rem;
+    line-height: 1.7;
+    color: var(--dark);
+}
+
+.page__main ul,
+.page__main ol {
+    margin-left: 1.2rem;
+    margin-bottom: 1.3rem;
+}
+
+.page__main li {
+    margin-bottom: 0.6rem;
+}
+
+.page__main code {
+    background: #f3f3f3;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.95rem;
+}
+
+.page__main pre {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: var(--radius);
+    overflow-x: auto;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    border: 1px solid #ddd;
+}
+
+.page__meta {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+/* 🛠️ Tech Stack Card (Homepage) */
+.tech-stack-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.tech-card {
+    text-align: center;
+    width: 100px;
+}
+
+.tech-card img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin: 0 auto 0.5rem;
+}
+
+.tech-card p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* ✅ Hide sidebar only on the homepage */
+body.home .page__sidebar,
+body.home .sidebar.sticky,
+body.home .page__content .sidebar {
+    display: none !important;
+}
+
+/* 🎨 Featured Posts Styling */
+.featured-posts {
+    background: linear-gradient(to right, #f8f9fa, #ffffff);
+    padding: 1.8rem;
+    border-radius: 8px;
+    margin: 2.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #6f42c1;
+}
+
+.featured-posts h2 {
+    margin-top: 0;
+    color: #6f42c1;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.featured-posts article {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.featured-posts article:hover {
+    background-color: #f1f3f5;
+    transform: translateX(5px);
+}
+
+.featured-posts article:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.featured-posts a {
+    color: #495057;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.featured-posts a:hover {
+    color: #6f42c1;
+    text-decoration: underline;
+}
+
+.featured-posts time {
+    display: block;
+    color: #868e96;
+    font-size: 0.82em;
+    margin-top: 0.3rem;
+    font-family: monospace;
+}
+
+/* 📚 TOC Sidebar */
+.page__sidebar {
+    position: sticky;
+    top: 6rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding-left: 1rem;
+    border-left: 1px solid #eee;
+    background: #fdfdfd;
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 768px) {
+    .featured-posts {
+        padding: 1.2rem;
+        margin: 1.5rem 0;
+    }
+}

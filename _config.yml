@@ -20,6 +20,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-include-cache
+  - jekyll-data
 
 # Exclude from Processing
 exclude:
@@ -129,3 +130,7 @@ toc:
   heading: "Article Contents"
   min_level: 2
   max_level: 3
+
+  sass:
+  style: compressed
+

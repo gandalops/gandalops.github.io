@@ -1,0 +1,113 @@
+/* 🔥 FEATURED BLOG POSTS SECTION */
+.featured-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.post-title {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.post-excerpt {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.post-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--gray);
+    align-items: center;
+}
+
+.post-meta .post-views img {
+    height: 18px;
+    vertical-align: center;
+}
+
+/* ✅ Hide sidebar only on homepage */
+body.home .page__sidebar,
+body.home .sidebar {
+    display: none !important;
+}
+
+/* ✅ Restore sidebar with sticky ToC for posts */
+.page__sidebar {
+    display: block;
+    position: sticky;
+    top: 6rem;
+    padding-left: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fdfdfd;
+    border-left: 1px solid #eee;
+}
+
+.page__content-wrapper {
+    display: flex;
+    gap: 2rem;
+}
+
+.page__content {
+    flex: 3;
+}
+
+.page__sidebar {
+    flex: 1;
+    position: sticky;
+    top: 6rem;
+    height: fit-content;
+    background: #fdfdfd;
+    border-left: 1px solid #eee;
+    padding-left: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.page__content .toc {
+    display: none !important;
+}
+
+.page__sidebar .toc {
+    display: block;
+    position: sticky;
+    top: 4rem;
+    background: #fff;
+    border-left: 2px solid #eee;
+    padding-left: 1rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 📚 Blog Post Spacing Fix */
+.page__main {
+    padding: 1.5rem 2rem;
+    line-height: 1.7;
+}
+
+.page__main h1,
+.page__main h2,
+.page__main h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.page__main p {
+    margin-bottom: 1rem;
+    font-size: 1.02rem;
+}
+
+.page__meta {
+    margin-bottom: 2rem;
+    color: var(--gray);
+    font-size: 0.9rem;
+}

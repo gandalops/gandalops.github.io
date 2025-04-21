@@ -1,17 +1,24 @@
 <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="https://github.com/gandalops" target="_blank">
-          <i class="fab fa-github"></i> gandalops
-        </a>
-        <a href="https://www.linkedin.com/in/yogeshgandal" target="_blank">
-          <i class="fab fa-linkedin"></i> yogeshgandal
-        </a>
-      </div>
-  
-      <div class="copyright">
-        © {{ "now" | date: "%Y" }} Yogesh Shankar Gandal. All rights reserved.
-      </div>
+  <div class="footer-row">
+
+    <!-- 🔗 Left: GitHub and LinkedIn Links -->
+    <div class="footer-left">
+      {% for link in site.author.links %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+        <i class="{{ link.icon }}"></i> {{ link.label }}
+      </a>
+      {% endfor %}
     </div>
-  </footer>
-  
+
+    <!-- 🪪 Center: Copyright -->
+    <div class="footer-center">
+      &copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. All rights reserved.
+    </div>
+
+    <!-- ⚠️ Right: Dev Message -->
+    <div class="footer-right">
+      <i class="fas fa-tools"></i> This site is under active development
+    </div>
+
+  </div>
+</footer>
