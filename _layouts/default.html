@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }} | {{ site.title }}</title>
-    {% seo %}
 
-    <!-- Sitewide Styles -->
-    <link rel="stylesheet" href="/css/home-content.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  {% seo %}
 
-    <!-- Optional: Font Awesome + Custom Head -->
-    {% include head/custom.html %}
-  </head>
-  <body>
-    {% include header.html %}
+  <!-- ✅ Load Modular Main CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
-    <div class="container">
-      <div class="main-grid">
-        {% include sidebar-left.html %}
+  <!-- Optional: Font Awesome + Custom Head -->
+  {% include head/custom.html %}
+</head>
+
+<body>
+  {% include header.html %}
+
+  <div class="container">
+    <div class="main-grid">
+
+      <!-- ✅ Show Left Sidebar Only on Home Page -->
+      {%- if page.url == "/" -%}
+      {% include sidebar-left.html %}
+      {%- endif -%}
+
+      <main class="main-content">
         {{ content }}
-        {% include sidebar-right.html %}
-      </div>
-    </div>
+      </main>
 
-    {% include footer.html %}
-  </body>
+    </div>
+  </div>
+
+  {% include footer.html %}
+</body>
+
 </html>

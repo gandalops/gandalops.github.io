@@ -28,3 +28,5 @@ package-lock.json
 Thumbs.db
 
 *.bak
+_site/
+serve.log
