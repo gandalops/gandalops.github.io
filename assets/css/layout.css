@@ -107,3 +107,93 @@
         position: relative;
     }
 }
+
+/* 🔧 Layout for header sections */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+}
+
+/* ✅ Adjust individual sections */
+.header-left {
+    flex: 1;
+    min-width: 60px;
+}
+
+.header-center {
+    flex: 2;
+    text-align: center;
+}
+
+.header-actions {
+    flex: 1;
+    text-align: right;
+}
+
+/* 🖥️ Desktop layout */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    flex: 1;
+    min-width: 50px;
+}
+
+.header-center {
+    flex: 2;
+    text-align: center;
+}
+
+.header-actions {
+    flex: 1;
+    text-align: right;
+}
+
+/* 📱 Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .header-container {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        padding: 0.75rem 1rem;
+    }
+
+    .header-left,
+    .header-actions {
+        flex: 1;
+        min-width: auto;
+    }
+
+    .header-center {
+        flex: 2;
+        text-align: center;
+    }
+
+    /* Smaller font for title and subtitle */
+    .site-title {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    .site-subtitle {
+        font-size: 0.75rem;
+        margin: 0;
+    }
+
+    /* Adjust logo icon size */
+    .logo-placeholder {
+        font-size: 1.2rem;
+    }
+
+    /* Reduce nav spacing when visible */
+    .nav__drawer ul.nav__items {
+        padding-left: 0;
+    }
+}
