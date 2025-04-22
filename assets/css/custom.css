@@ -136,3 +136,41 @@ html {
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
+
+/* Show hamburger only on mobile */
+.menu__toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu__toggle {
+        display: inline-block;
+    }
+}
+
+/* Horizontal nav for desktop */
+.nav__drawer ul.nav__items {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__drawer ul.nav__items li a {
+    text-decoration: none;
+    color: #007acc;
+    /* your link color */
+}
+
+@media screen and (max-width: 768px) {
+    .nav__drawer ul.nav__items {
+        display: block;
+        /* vertical stack on mobile */
+        margin-top: 1rem;
+    }
+
+    .nav__drawer ul.nav__items li {
+        margin-bottom: 0.75rem;
+    }
+}

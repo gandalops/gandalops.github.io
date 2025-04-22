@@ -1,9 +1,9 @@
+<!-- _includes/header.html -->
 <header class="site-header">
   <div class="header-container">
 
     <!-- Left: Logo -->
     <div class="header-left">
-      <!-- You can replace with: <img src="/assets/images/logo.png" alt="Logo" class="site-logo"> -->
       <i class="fas fa-cog fa-lg logo-placeholder"></i>
     </div>
 
@@ -13,22 +13,25 @@
       <p class="site-subtitle">DevSecOps Engineer | Cloud Infrastructure Specialist</p>
     </div>
 
-    <!-- Right: Desktop Nav + Hamburger Button -->
+    <!-- Right: Nav and Hamburger -->
     <div class="header-actions">
-      <!-- 🍔 Mobile Toggle Button -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <i class="fas fa-bars"></i>
+
+      <!-- 🍔 Hamburger Toggle (Minimal Mistakes standard) -->
+      <button class="menu__toggle js-toggle-nav" aria-label="Toggle Menu">
+        ☰
       </button>
 
-      <!-- 📌 Nav Links -->
-      <nav class="header-right nav-links" id="navMenu">
-        <a href="#about">About</a>
-        <a href="#techstack">Techstack</a>
-        <a href="#projects">Projects</a>
-        <a href="#blogs">Blogs</a>
-        <a href="#contact">Contact</a>
+      <!-- ✅ Nav links with nav__drawer -->
+      <nav id="site-nav" class="nav__drawer">
+        <ul class="nav__items">
+          <li><a href="#about">About</a></li>
+          <li><a href="#techstack">Techstack</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
-    </div>
 
+    </div>
   </div>
 </header>
