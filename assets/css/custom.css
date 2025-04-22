@@ -111,3 +111,138 @@ html {
     color: var(--gray);
     font-size: 0.9rem;
 }
+
+.project-tech {
+    display: flex;
+    gap: 0.75rem;
+    /* space between logos */
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.project-tech img {
+    height: 40px;
+    width: auto;
+}
+
+.section-block .section-title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Ensure vertical spacing between major homepage sections */
+.section-block {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Show hamburger only on mobile */
+.menu__toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu__toggle {
+        display: inline-block;
+    }
+}
+
+/* Horizontal nav for desktop */
+.nav__drawer ul.nav__items {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__drawer ul.nav__items li a {
+    text-decoration: none;
+    color: #007acc;
+    /* your link color */
+}
+
+@media screen and (max-width: 768px) {
+    .nav__drawer ul.nav__items {
+        display: block;
+        /* vertical stack on mobile */
+        margin-top: 1rem;
+    }
+
+    .nav__drawer ul.nav__items li {
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* 🔧 Hide hamburger menu on desktop */
+.menu__toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu__toggle {
+        display: inline-block;
+    }
+}
+
+/* 🔧 Make nav links horizontal on desktop */
+.nav__drawer ul.nav__items {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__drawer ul.nav__items li a {
+    text-decoration: none;
+    color: #007acc;
+}
+
+/* 🔧 Stack nav links vertically on mobile */
+@media screen and (max-width: 768px) {
+    .nav__drawer ul.nav__items {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .nav__drawer ul.nav__items li {
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* 🎯 Logo Box Styling */
+.logo-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border: 2px solid #ffffff33;
+    /* subtle white border */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* translucent bg */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    height: 40px;
+    width: 40px;
+}
+
+/* 🎯 Icon inside the logo box */
+.logo-box .logo-placeholder {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+/* 🪄 Optional tweak for mobile */
+@media screen and (max-width: 768px) {
+    .logo-box {
+        height: 32px;
+        width: 32px;
+        padding: 0.25rem;
+    }
+
+    .logo-box .logo-placeholder {
+        font-size: 1rem;
+    }
+}

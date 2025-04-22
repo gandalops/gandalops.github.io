@@ -1,3 +1,4 @@
+<!-- _layouts/default.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,10 +8,7 @@
   <title>{{ page.title }} | {{ site.title }}</title>
   {% seo %}
 
-  <!-- ✅ Load Modular Main CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-  <!-- Optional: Font Awesome + Custom Head -->
   {% include head/custom.html %}
 </head>
 
@@ -19,8 +17,6 @@
 
   <div class="container">
     <div class="main-grid">
-
-      <!-- ✅ Show Left Sidebar Only on Home Page -->
       {%- if page.url == "/" -%}
       {% include sidebar-left.html %}
       {%- endif -%}
@@ -28,11 +24,13 @@
       <main class="main-content">
         {{ content }}
       </main>
-
     </div>
   </div>
 
   {% include footer.html %}
+
+  <!-- ✅ ADD THIS to enable nav toggle -->
+  {% include scripts.html %}
 </body>
 
 </html>
