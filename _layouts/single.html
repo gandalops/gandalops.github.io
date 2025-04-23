@@ -6,21 +6,25 @@ layout: default
     <div class="page__inner-wrap" style="display: flex; gap: 2rem;">
 
         <!-- Main Article -->
-        <main class="page__main" style="flex: 1 1 75%;" itemprop="articleBody">
-            {% if page.title %}
-            <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
-            {% endif %}
+        <main itemprop="articleBody">
+            <div class="page__main blog-content">
+                {% if page.title %}
+                <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
+                {% endif %}
 
-            {% if page.read_time %}
-            <p class="page__meta">{{ page.read_time }} minute read</p>
-            {% endif %}
+                {% if page.read_time %}
+                <p class="page__meta">
+                    {% include reading-time.html content=content %}
+                </p>
+                {% endif %}
 
-            {{ content | remove_toc }}
+                {{ content }}
+            </div>
         </main>
 
         <!-- Right Sticky TOC Sidebar -->
         {% if page.toc %}
-        <aside class="page__sidebar" aria-label="Table of Contents">
+        <aside class="page__sidebar blog-toc" aria-label="Table of Contents">
             {% include toc.html %}
         </aside>
         {% endif %}

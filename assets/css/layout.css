@@ -197,3 +197,24 @@
         padding-left: 0;
     }
 }
+
+/* Blog post layout split */
+.page__inner-wrap {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.blog-content {
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+.blog-toc {
+    flex: 0 0 30%;
+    max-width: 30%;
+    position: sticky;
+    top: 4rem;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+}

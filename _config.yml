@@ -21,6 +21,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-include-cache
   - jekyll-data
+  
 
 # Exclude from Processing
 exclude:
@@ -63,6 +64,8 @@ defaults:
       read_time: true
       show_featured: false
       comments: true
+      toc: true
+      toc_sticky: true
 
 # Markdown and Syntax Highlighting
 markdown: kramdown

@@ -6,7 +6,6 @@ last_modified_at: 2025-04-15
 categories: [Jekyll, GitHub Pages, Ruby, Debugging]
 tags: [jekyll, ruby, github-pages, minimal-mistakes, blog, errors]
 author_profile: true
-read_time: true
 toc: true
 toc_sticky: true
 toc_label: "Article Contents"

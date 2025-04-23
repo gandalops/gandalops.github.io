@@ -7,7 +7,6 @@ categories: [DevSecOps, Governance]
 tags: [terraform, opa, tfsec, governance, devsecops, policy-as-code]
 excerpt: "How I apply real-world governance rules, policy enforcement, and security practices across all 21 DevSecOps Epics."
 author_profile: true
-read_time: true
 toc: true
 toc_sticky: true
 toc_label: "Article Contents"

@@ -1,0 +1,7 @@
+{% if page.toc %}
+<aside class="page__sidebar blog-toc" aria-label="Table of Contents">
+    <nav class="toc js-toc">
+        <h2 class="toc__title">{{ page.toc_label | default: "Table of Contents" }}</h2>
+    </nav>
+</aside>
+{% endif %}

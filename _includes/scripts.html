@@ -1,0 +1,17 @@
+<!-- Tocbot styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.css" />
+
+<!-- Tocbot script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+<!-- Run Tocbot -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        tocbot.init({
+            tocSelector: '.js-toc',
+            contentSelector: '.page__main',
+            headingSelector: 'h2, h3',
+            collapseDepth: 6
+        });
+    });
+</script>

@@ -7,7 +7,6 @@ categories: [DevSecOps, AWS]
 tags: [aws, ec2, vpc, secretsmanager, cloudwatch, devsecops, monitoring, iam]
 excerpt: "My hands-on DevSecOps journey of creating a secure and monitorable EC2 environment in AWS, with IAM, Secrets Manager, CloudWatch, CloudTrail, and cleanup."
 author_profile: true
-read_time: true
 toc: true
 toc_sticky: true
 toc_label: "Article Contents"

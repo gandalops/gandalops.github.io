@@ -7,7 +7,6 @@ categories: [Terraform, DevSecOps]
 tags: [terraform, aws, ec2, iac, devops, infrastructure-as-code]
 excerpt: "My hands-on journey learning Terraform by deploying EC2 instances on AWS, including challenges faced and security considerations."
 author_profile: true
-read_time: true
 toc: true
 toc_sticky: true
 toc_label: "Article Contents"

@@ -7,9 +7,8 @@ categories: [DevSecOps, Governance]
 tags: [terraform, checkov, devsecops, security, governance, policy-as-code]
 excerpt: "My first hands-on experience applying security policies to Terraform using Checkov. From 11 failed checks to just 3, here’s what I learned."
 author_profile: true
-read_time: true
 toc: true
-toc_label: "Article Outline"
+toc_label: "Article Contents"
 toc_sticky: true
 ---
 

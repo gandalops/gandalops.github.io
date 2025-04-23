@@ -8,7 +8,6 @@ tags: [git, reset, backup, branching, dev workflow, wip]
 excerpt: "My Git working directory got messy after hours of local experimentation. Here's how I backed up my changes, reset cleanly, and what I learned about safe Git workflows."
 author_profile: true
 read_time: true
-toc: true
 toc_sticky: true
 toc_label: "Article Contents"
 ---
